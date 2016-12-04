@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea" fx:controller="application.FXMLMainController">
+	<!-- TODO Add Nodes -->
+	<center>
+		<TabPane fx:id="tabPane">
+			<tabs>
+				<Tab text="Batch Command">
+					<content>
+						<fx:include fx:id="mainTabPage" source="batchcommands/BatchCommandTab.fxml" />
+					</content>
+				</Tab>
+				<Tab text="Applications">
+					<content>
+						<fx:include fx:id="applicationTabPage" source="applications/ApplicationsTab.fxml" />
+					</content>
+				</Tab>
+				<Tab text="APKs">
+					<content>
+						<fx:include fx:id="apksTabPage" source="apks/APKsTab.fxml" />
+					</content>
+				</Tab>
+				<Tab text="Intents / Broadcasts">
+					<content>
+						<fx:include fx:id="intentbroadcastTabPage" source="intentbroadcasts/IntentsBroadcastsLayout.fxml" />
+					</content>
+				</Tab>
+				<Tab text="Log / Exceptions">
+					<content>
+						<fx:include fx:id="logexceptionTabPage" source="logexceptions/LogExceptionsLayout.fxml" />
+					</content>
+				</Tab>
+				<Tab text="Terminal">
+					<content>
+						<fx:include fx:id="terminalTabPage" source="FXMLTerminal.fxml" />
+					</content>
+				</Tab>
+				<Tab fx:id="preferenceTabPage" text="Preference">
+					<content>
+						<fx:include source="FXMLPreference.fxml" />
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<right>
+		<fx:include source="devices/DevicesLayout.fxml" />
+	</right>
+	<bottom>
+		<Label fx:id="labelRunningLog" text="running application.log">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Label>
+	</bottom>
+</BorderPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_adbuitool" default="compile.module.adbuitool">
+  <dirname property="module.adbuitool.basedir" file="${ant.file.module_adbuitool}"/>
+  
+  <property name="module.jdk.home.adbuitool" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.adbuitool" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.adbuitool" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.adbuitool" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="adbuitool.output.dir" value="${module.adbuitool.basedir}/out/production/ADBUITool"/>
+  <property name="adbuitool.testoutput.dir" value="${module.adbuitool.basedir}/out/test/ADBUITool"/>
+  
+  <path id="adbuitool.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="adbuitool.module.production.classpath">
+    <path refid="${module.jdk.classpath.adbuitool}"/>
+    <path refid="library.gson-2.2.4.classpath"/>
+  </path>
+  
+  <path id="adbuitool.runtime.production.module.classpath">
+    <pathelement location="${adbuitool.output.dir}"/>
+    <path refid="library.gson-2.2.4.classpath"/>
+  </path>
+  
+  <path id="adbuitool.module.classpath">
+    <path refid="${module.jdk.classpath.adbuitool}"/>
+    <pathelement location="${adbuitool.output.dir}"/>
+    <path refid="library.gson-2.2.4.classpath"/>
+  </path>
+  
+  <path id="adbuitool.runtime.module.classpath">
+    <pathelement location="${adbuitool.testoutput.dir}"/>
+    <pathelement location="${adbuitool.output.dir}"/>
+    <path refid="library.gson-2.2.4.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.adbuitool">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.adbuitool">
+    <patternset refid="excluded.from.module.adbuitool"/>
+  </patternset>
+  
+  <path id="adbuitool.module.sourcepath">
+    <dirset dir="${module.adbuitool.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.adbuitool" depends="compile.module.adbuitool.production,compile.module.adbuitool.tests" description="Compile module ADBUITool"/>
+  
+  <target name="compile.module.adbuitool.production" depends="register.custom.compilers" description="Compile module ADBUITool; production classes">
+    <mkdir dir="${adbuitool.output.dir}"/>
+    <javac2 destdir="${adbuitool.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.adbuitool}/javac">
+      <compilerarg line="${compiler.args.adbuitool}"/>
+      <bootclasspath refid="adbuitool.module.bootclasspath"/>
+      <classpath refid="adbuitool.module.production.classpath"/>
+      <src refid="adbuitool.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.adbuitool"/>
+    </javac2>
+    
+    <copy todir="${adbuitool.output.dir}">
+      <fileset dir="${module.adbuitool.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.adbuitool.tests" depends="register.custom.compilers,compile.module.adbuitool.production" description="compile module ADBUITool; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.adbuitool" description="cleanup module">
+    <delete dir="${adbuitool.output.dir}"/>
+    <delete dir="${adbuitool.testoutput.dir}"/>
+  </target>
+</project>

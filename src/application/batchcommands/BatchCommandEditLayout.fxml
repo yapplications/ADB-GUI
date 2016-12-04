@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import application.batchcommands.BatchCommandsListView?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.batchcommands.BatchCommandEditController">
+	<right>
+		<VBox prefHeight="400.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label fx:id="labelCreateComandTitle" text="Create New Command:" wrapText="true" />
+				<Label text="Description:" />
+				<TextField fx:id="textFieldDescription" />
+				<Label text="Command:" />
+				<TextArea fx:id="textAreaCommand" prefHeight="128.0" prefWidth="190.0" wrapText="true" />
+				<HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="200.0" spacing="5.0">
+					<children>
+						<Label text="Insert at Index:" />
+						<TextField fx:id="textFieldIndex" prefHeight="27.0" prefWidth="94.0" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="200.0" spacing="5.0">
+					<children>
+						<Label text="Type:" />
+						<ComboBox fx:id="comboBoxCommandType" disable="true" prefWidth="150.0">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="ADB" />
+									<String fx:value="Other" />
+								</FXCollections>
+							</items>
+						</ComboBox>
+					</children>
+				</HBox>
+				<HBox prefHeight="21.0" prefWidth="193.0" spacing="5.0">
+					<children>
+						<Button fx:id="buttonCancel" mnemonicParsing="false" onAction="#onCancelCommandClicked" prefHeight="27.0" prefWidth="93.0" text="Cancel" />
+						<Button fx:id="buttonCreateCommand" mnemonicParsing="false" onAction="#onCreateCommandClicked" prefHeight="27.0" prefWidth="93.0" text="Create" />
+					</children>
+				</HBox>
+				<Button fx:id="buttonCommandWizard" mnemonicParsing="false" onAction="#onCommandWizardClicked" prefHeight="27.0" prefWidth="190.0" text="Command Wizard" />
+			</children>
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+		</VBox>
+	</right>
+	<center>
+		<VBox fx:id="panelCenter" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+			<children>
+				<VBox prefHeight="400.0" prefWidth="100.0" spacing="5.0">
+					<children>
+						<HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="200.0" spacing="5.0">
+							<children>
+								<TextField fx:id="textFieldBatchName" prefHeight="27.0" prefWidth="800.0" promptText="Batch name" />
+							</children>
+							<padding>
+								<Insets left="5.0" top="5.0" />
+							</padding>
+						</HBox>
+						<HBox alignment="CENTER_LEFT" prefHeight="28.0" prefWidth="200.0" spacing="5.0">
+							<children>
+								<Label text="Test:" />
+								<Button fx:id="buttonRunAll" mnemonicParsing="false" onAction="#onRunAllCommandsClicked" prefHeight="27.0" prefWidth="185.0" text="Run all commands" />
+								<Button fx:id="buttonRunSelected" mnemonicParsing="false" onAction="#onRunSelectedCommandClicked" text="Run selected command" />
+								<Button fx:id="buttonEdit" mnemonicParsing="false" onAction="#onEditCommandClicked" text="Edit" />
+								<Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#onDeleteCommandClicked" prefHeight="27.0" prefWidth="93.0" text="Delete" />
+							</children>
+							<padding>
+								<Insets left="5.0" right="5.0" />
+							</padding>
+						</HBox>
+						<BatchCommandsListView fx:id="listViewCommands" prefHeight="240.0" prefWidth="700.0" />
+					</children>
+				</VBox>
+				<TextArea fx:id="textAreaLog" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Log" />
+			</children>
+		</VBox>
+	</center>
+	<bottom>
+		<AnchorPane prefHeight="30.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="buttonSave" layoutX="3.0" layoutY="1.0" mnemonicParsing="false" onAction="#onSaveClicked" prefHeight="27.0" prefWidth="111.0" text="Save batch command" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+			</children>
+		</AnchorPane>
+	</bottom>
+</BorderPane>

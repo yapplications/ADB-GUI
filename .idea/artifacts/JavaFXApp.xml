@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="JavaFXApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFXApp</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="application.Main" />
+        <option name="description" value="" />
+        <option name="height" value="500" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="ADBUITool" />
+        <option name="vendor" value="yapplications" />
+        <option name="version" value="0.1.3" />
+        <option name="width" value="700" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="module-output" name="ADBUITool" />
+      </element>
+      <element id="library" level="project" name="gson-2.2.4" />
+    </root>
+  </artifact>
+</component>

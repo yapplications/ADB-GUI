@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import application.batchcommands.BatchCommandsListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="application.batchcommands.BatchCommandTabController">
+	<!-- TODO Add Nodes -->
+
+	<VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<HBox alignment="CENTER_LEFT" spacing="5.0">
+			<Label layoutX="100" text="Batch Commands" />
+			<Button onAction="#handleRefreshClicked" text="Refresh list" />
+			<Button onAction="#handleCreateNewClicked" text="Create new" />
+			<Button onAction="#handleEditNewClicked" text="Edit" />
+			<Button onAction="#handleCopyClicked" text="Copy" />
+			<Button onAction="#handleDeleteClicked" text="Delete" />
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+		</HBox>
+
+		<ListView fx:id="listBatches" prefHeight="120" />
+		<HBox alignment="CENTER_LEFT" spacing="5.0">
+			<Label text="Commands" />
+			<Button onAction="#handleRunBatchClicked" text="Run batch" />
+			<Button onAction="#handleRunSingleCommandClicked" text="Run single command" />
+			<Button onAction="#handleRunForwardSingleCommandClicked" text="Run from selected command" />
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+
+		</HBox>
+		<BatchCommandsListView fx:id="listCommands" prefHeight="180" />
+		<TextArea wrapText="true" fx:id="textAreaLog" editable="false" prefHeight="160" prefWidth="800" promptText="Log" />
+	</VBox>
+
+</AnchorPane>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import application.batchcommands.BatchCommandsListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Hyperlink?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea"
+            fx:controller="application.batchcommands.CommandWizardController"
+            prefWidth="600">
+    <!-- TODO Add Nodes -->
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroupSelection"/>
+    </fx:define>
+
+    <center>
+        <VBox>
+            <TabPane fx:id="tabPane">
+                <tabs>
+                    <Tab text="Input">
+                        <content>
+                            <VBox>
+                                <Label wrapText="true" text="Input event"/>
+                                <Label text="Enter text or other input events see all options here:"/>
+                                <Label text="https://developer.android.com/reference/android/view/KeyEvent.html"/>
+                                <GridPane prefWidth="Infinity" hgap="10" vgap="10">
+                                    <padding>
+                                        <Insets top="5" right="5" bottom="5" left="5"/>
+                                    </padding>
+
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                          GridPane.rowIndex="0">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Input text"
+                                                     fx:id="radioButtonInputText"/>
+                                        <TextField promptText="Enter text here" fx:id="textFieldInputText"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="0">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Tab (Next element)"
+                                                     fx:id="radioButtonInputTab"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="2"
+                                          GridPane.rowIndex="0">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Enter"
+                                                     fx:id="radioButtonInputEnter"/>
+                                    </HBox>
+
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                          GridPane.rowIndex="1">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Power"
+                                                     fx:id="radioButtonInputPower"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="1">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Volume up"
+                                                     fx:id="radioButtonInputVolumeUp"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="2"
+                                          GridPane.rowIndex="1">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Volume down"
+                                                     fx:id="radioButtonInputVolumeDown"/>
+                                    </HBox>
+
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                          GridPane.rowIndex="2">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Back"
+                                                     fx:id="radioButtonInputBack"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="2">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Home"
+                                                     fx:id="radioButtonInputHome"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="2"
+                                          GridPane.rowIndex="2">
+                                        <RadioButton toggleGroup="$toggleGroupSelection" text="Recent"
+                                                     fx:id="radioButtonInputRecent"/>
+                                    </HBox>
+                                </GridPane>
+                            </VBox>
+                        </content>
+                    </Tab>
+                    <Tab text="Files/Apps">
+                        <content>
+                            <GridPane prefWidth="Infinity" hgap="10" vgap="10">
+                                <padding>
+                                    <Insets top="5" right="5" bottom="5" left="5"/>
+                                </padding>
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="0">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Push file to device"
+                                                 fx:id="radioButtonFilesPush"/>
+                                    <TextField promptText="File on your pc" fx:id="textFieldFilesPushFrom"/>
+                                    <TextField promptText="Destination on device" fx:id="textFieldFilesPushTo"/>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="1">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Pull file from device"
+                                                 fx:id="radioButtonFilesPull"/>
+                                    <TextField promptText="File on your device" fx:id="textFieldFilesPullFrom"/>
+                                    <TextField promptText="Destination on your pc" fx:id="textFieldFilesPullTo"/>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="2">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Install apk"
+                                                 fx:id="radioButtonFilesInstallApk"/>
+                                    <TextField promptText="Apk path on the device" fx:id="textFieldFilesApkPath"/>
+                                </HBox>
+
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="3">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Uninstall app"
+                                                 fx:id="radioButtonFilesUnInstallApk"/>
+                                    <TextField promptText="App package name" fx:id="textFieldFilesUninstallApp"/>
+                                </HBox>
+
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="4">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Clear app data"
+                                                 fx:id="radioButtonFilesClearData"/>
+                                    <TextField promptText="App package name" fx:id="textFieldFilesClearData"/>
+                                </HBox>
+
+                                <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"
+                                      GridPane.rowIndex="5">
+                                    <RadioButton toggleGroup="$toggleGroupSelection" text="Open app"
+                                                 fx:id="radioButtonFilesOpenApp"/>
+                                    <TextField promptText="App package name" fx:id="textFieldFilesOpenApp"/>
+                                </HBox>
+                            </GridPane>
+                        </content>
+                    </Tab>
+                </tabs>
+            </TabPane>
+        </VBox>
+    </center>
+    <bottom>
+        <Button text="Add command" prefWidth="600" onAction="#addCommandClicked"/>
+    </bottom>
+</BorderPane>

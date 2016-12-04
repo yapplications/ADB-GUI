@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="540.0"
+            xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.view.DateTimePickerController">
+
+    <VBox spacing="5">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Hour:"/>
+            <ChoiceBox fx:id="choiceBoxHour" maxWidth="5.0" prefWidth="5.0"/>
+            <Label text="Minute:"/>
+            <ChoiceBox fx:id="choiceBoxMinute" maxWidth="5.0" prefWidth="5.0"/>
+            <Label text="Second:"/>
+            <ChoiceBox fx:id="choiceBoxSecond" maxWidth="5.0" prefWidth="5.0"/>
+            <Label text="Date:"/>
+            <DatePicker fx:id="datePicker"/>
+
+        </HBox>
+        <Button text="Set" prefWidth="540" onAction="#onSetClicked"/>
+    </VBox>
+</AnchorPane>

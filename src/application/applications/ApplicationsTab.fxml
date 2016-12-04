@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea" fx:controller="application.applications.ApplicationsTabController">
+	<!-- TODO Add Nodes -->
+
+	<VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		<HBox alignment="CENTER_LEFT" spacing="5">
+			<Label layoutX="100" text="Apps on device" />
+			<TextField fx:id="textFieldFilter" promptText="Filter" />
+			<CheckBox fx:id="checkBoxOnlyRunnig" text="Show only running" />
+			<padding>
+				<Insets left="5.0" top="5.0"/>
+			</padding>
+		</HBox>
+
+		<HBox alignment="CENTER_LEFT" spacing="5.0">
+			<Button onAction="#handleClearDataClicked" text="Clear Data" />
+			<Button onAction="#uninstallClicked" text="Uninstall" />
+			<Button onAction="#handleOpenClicked" text="Open" />
+			<Button onAction="#handleKillClicked" text="Kill" />
+			<Button onAction="#handleGetAPKClicked" text="Get APK" />
+			<Button onAction="#runMonkeyClicked" text="Run Monkey" />
+
+			<padding>
+            <Insets left="5.0" />
+         </padding>
+
+		</HBox>
+		<ListView fx:id="listApplications" prefHeight="1800" />
+
+	</VBox>
+
+</AnchorPane>

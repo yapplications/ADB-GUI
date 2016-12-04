@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ListView?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.intentbroadcasts.IntentBroadcastsController">
+    <VBox spacing="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <fx:define>
+            <ToggleGroup fx:id="toggleGroupActivityManagerCommand"/>
+        </fx:define>
+
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label text="Activity manager commands:"/>
+            <RadioButton fx:id="radioButtonActivityManagerCommandStart" text="start (Activity)"
+                         toggleGroup="$toggleGroupActivityManagerCommand"/>
+            <RadioButton fx:id="radioButtonActivityManagerCommandBroadcast" text="broadcast (Broadcast Intent)"
+                         toggleGroup="$toggleGroupActivityManagerCommand"/>
+            <RadioButton fx:id="radioButtonActivityManagerCommandStartService" text="startservice (Service)"
+                         toggleGroup="$toggleGroupActivityManagerCommand"/>
+            <Label text=""/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label minWidth="80" text="Action:"/>
+            <TextField fx:id="textFieldAction" prefWidth="20000"
+                       promptText="Specify the intent action, such as 'android.intent.action.VIEW' or choose from list -&gt;"/>
+            <ChoiceBox fx:id="choiceBoxActions" maxWidth="5.0" prefWidth="5.0"/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label minWidth="80" text="Data:"/>
+            <TextField fx:id="textFieldData" prefWidth="20000"
+                       promptText="Specify the intent data URI, such as 'content://contacts/people/1'."/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label minWidth="80" text="Mime type:"/>
+            <TextField fx:id="textFieldMimeType" prefWidth="20000"
+                       promptText="Specify the intent MIME type, such as 'image/png'."/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label minWidth="80" text="Category:"/>
+            <TextField fx:id="textFieldCategory" prefWidth="20000"
+                       promptText="Specify an intent category, such as 'android.intent.category.APP_CONTACTS''."/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="5">
+            <Label minWidth="80" text="Component:"/>
+            <TextField fx:id="textFieldComponent" prefWidth="20000"
+                       promptText="Specify the component name with package name prefix to create an explicit intent, such as 'com.example.app/.ExampleActivity'."/>
+        </HBox>
+        <Button fx:id="buttonSend" text="Send" prefWidth="Infinity" onAction="#onButtonSendClicked"/>
+
+        <ListView fx:id="listSaved" maxWidth="20000" prefHeight="120" >
+            <VBox.margin>
+                <Insets top="20.0"/>
+            </VBox.margin>
+        </ListView>
+
+        <HBox alignment="CENTER_LEFT" spacing="5">
+
+            <Label minWidth="80" text="Name:"/>
+            <TextField fx:id="textFieldName" prefWidth="20000" promptText="Name to save (may overide existing one)"/>
+        </HBox>
+        <Button fx:id="buttonSave" text="Save" prefWidth="Infinity" onAction="#onButtonSave"/>
+        <Button fx:id="buttonDelete" text="Delete" prefWidth="Infinity" onAction="#onButtonDelete"/>
+
+    </VBox>
+
+</AnchorPane>

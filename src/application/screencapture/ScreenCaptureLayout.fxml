@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.DatePicker?>
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400" minWidth="200" prefHeight="400.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.screencapture.ScreenCaptureController">
+	<center>
+
+		<AnchorPane fx:id="paneImageContainer" >
+	<ImageView fx:id="imageViewCapture"
+
+			   preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+			</ImageView>
+		</AnchorPane>
+</center>
+	<bottom>
+		<VBox>
+			<Label alignment="CENTER" prefHeight="20" fx:id="labelLog" prefWidth="Infinity" text="Press save to create a snapshot" textAlignment="CENTER">
+            <padding>
+               <Insets right="1.0" top="1.0" />
+            </padding></Label>
+			<Button onAction="#onSaveClicked" prefHeight="20" prefWidth="1000" text="save" />
+			<Button onAction="#onOpenFolderClicked" prefHeight="20" prefWidth="1000" text="open snapshot folder" />
+		</VBox>
+	</bottom>
+</BorderPane>

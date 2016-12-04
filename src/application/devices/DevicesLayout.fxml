@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.devices.DevicesController">
+	<!-- TODO Add Nodes -->
+
+	<VBox spacing="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+		<HBox alignment="CENTER_LEFT" spacing="5">
+			<Label text="Devices" />
+			<Button fx:id="buttonADBToggle" onAction="#handleToggleADBClicked" text="Kill ADB" />
+
+		</HBox>
+
+		<ListView fx:id="listDevices" maxWidth="200" prefHeight="120" />
+		<Button onAction="#handleConnectToWifiClicked" maxWidth="Infinity" text="Connect device via WIFI" />
+		<Button onAction="#handleTakeSnapshotClicked" maxWidth="Infinity" text="Take snapshot" />
+		<TextField maxWidth="Infinity" promptText="Send text to device" onAction="#onDeviceInputEnter" fx:id="textFieldDeviceInput"/>
+		<Button text="Change Emulator date" maxWidth="Infinity" onAction="#onChangeEmulatorDate"/>
+		<Button text="Open app directory" maxWidth="Infinity" onAction="#onOpenAppDirectory"/>
+	</VBox>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+
+</AnchorPane>

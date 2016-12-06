@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.preferences.PreferenceController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+        <center>
+    <VBox spacing="10">
+
+        <Text text="Preferences" />
+        <Label text="Adb path:" />
+        <TextField fx:id="textFieldAdbPath" prefWidth="700" text="devices" />
+
+        <Label text="Additions APKs folder path (seperated by ;):" />
+        <TextField fx:id="textFieldAPKsFolders" prefWidth="700" text="" />
+
+        <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <Label text="Obfuscation tool (Jadx):" />
+            <Button onAction="#onDownloadJadxClicked" text="Download Jadx">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Button>
+        </HBox>
+
+        <TextField fx:id="textFieldObfuscatioinToolPath" prefWidth="700" promptText="full path to jadx-gui (should end with: /jadx-gui)" text="" />
+
+        <Button onAction="#handleSaveButtonAction" prefWidth="2000" text="Save" />
+
+    </VBox>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_LEFT" spacing="50">
+                <Label fx:id="labelVersion" text="Version: " />
+                <Label text="Created by: Evgeni Shafran yapplications" />
+                <Hyperlink text="GitHub" onAction="#handleGitHubLink" />
+                <Hyperlink text="yapplications" onAction="#handleYapplicationsLink" />
+                <Hyperlink text="Contact Us" onAction="#handleContactUsLink" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

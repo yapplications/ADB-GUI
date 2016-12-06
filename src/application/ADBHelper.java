@@ -5,6 +5,8 @@ import application.log.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ADBHelper {
     public static boolean pull(String from, String to) {
@@ -83,11 +85,11 @@ public class ADBHelper {
 
     public static String install(String selectedApk) {
 
-        String result = AdbUtils.run("install -r \"" + selectedApk + "\"");
+        String result = AdbUtils.run("install -r " + selectedApk + "");
         String[] split = result.split("\n");
 
         if (split.length > 0) {
-            if (split[split.length - 1].contains("Failure")) {
+            if (split[split.length - 1].contains("Failure") || split[split.length - 1].contains("Missing")) {
                 return split[split.length - 1];
             } else {
                 return null;
@@ -189,5 +191,24 @@ public class ADBHelper {
         }
 
         return result;
+    }
+
+    public static Set <String> getPackages() {
+        String result = AdbUtils.run("shell pm list packages");
+
+        String[] split = result.split("\n");
+
+        Set <String> packages = new HashSet();
+
+        for (int i = 1; i < split.length; i++) {
+            String packageName = split[i].replace("package:", "").trim();
+            if (packageName.equals("android")) {
+                continue;
+            }
+
+            packages.add(packageName);
+        }
+
+        return packages;
     }
 }

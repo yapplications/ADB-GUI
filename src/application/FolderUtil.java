@@ -1,5 +1,7 @@
 package application;
 
+import application.preferences.Preferences;
+
 import java.io.File;
 
 public class FolderUtil {

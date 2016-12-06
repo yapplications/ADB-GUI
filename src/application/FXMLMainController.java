@@ -1,14 +1,12 @@
 package application;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.apks.APKsTabController;
 import application.applications.ApplicationsTabController;
-import application.batchcommands.CommandWizardController;
+import application.preferences.Preferences;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -21,10 +19,6 @@ import javafx.scene.control.TabPane;
 import javafx.scene.paint.Color;
 import application.log.Logger;
 import application.log.Logger.LoggerListener;
-
-import javax.imageio.ImageIO;
-import javax.imageio.stream.FileImageOutputStream;
-import javax.imageio.stream.ImageOutputStream;
 
 public class FXMLMainController implements Initializable {
 

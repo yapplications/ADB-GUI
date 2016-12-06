@@ -1,5 +1,6 @@
 package application;
 
+import application.preferences.Preferences;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
@@ -11,7 +12,6 @@ import application.services.DeviceMonitorService;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-import java.io.File;
 import java.io.PrintStream;
 
 public class Main extends Application {

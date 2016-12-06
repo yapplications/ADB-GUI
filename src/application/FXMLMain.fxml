@@ -43,7 +43,7 @@
 				</Tab>
 				<Tab fx:id="preferenceTabPage" text="Preference">
 					<content>
-						<fx:include source="FXMLPreference.fxml" />
+						<fx:include source="preferences/PreferenceLayout.fxml" />
 					</content>
 				</Tab>
 			</tabs>

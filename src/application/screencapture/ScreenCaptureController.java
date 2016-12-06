@@ -3,6 +3,7 @@ package application.screencapture;
 import application.*;
 import application.log.Logger;
 import application.model.Model;
+import application.preferences.Preferences;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,7 +22,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;

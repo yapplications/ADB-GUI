@@ -3,7 +3,7 @@ package application.logexceptions;
 import application.AdbUtils;
 import application.DateUtil;
 import application.DialogUtil;
-import application.Preferences;
+import application.preferences.Preferences;
 import application.log.Logger;
 import application.model.Model;
 import javafx.application.Platform;

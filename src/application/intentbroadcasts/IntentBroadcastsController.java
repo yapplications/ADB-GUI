@@ -6,6 +6,7 @@ import application.DialogUtil;
 import application.FileUtils;
 import application.log.Logger;
 import application.model.CommandBatch;
+import application.preferences.Preferences;
 import com.google.gson.Gson;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -177,7 +178,7 @@ public class IntentBroadcastsController implements Initializable {
         } else {
             IntentBroadcast intentBroadcast = getFilledIntent();
 
-            File intentFile = new File(FileUtils.getIntentsFolder(), textFieldName.getText());
+            File intentFile = new File(Preferences.getInstance().getIntentsFolder(), textFieldName.getText());
             Gson gson = new Gson();
             String jsonIntent = gson.toJson(intentBroadcast);
             try {
@@ -201,7 +202,7 @@ public class IntentBroadcastsController implements Initializable {
         savedIntentsListItems.clear();
         intents.clear();
 
-        for (File saved: FileUtils.getIntentsFolder().listFiles()){
+        for (File saved: Preferences.getInstance().getIntentsFolder().listFiles()){
             Logger.d("Read: " + saved.getName());
             String intent;
             if (saved.getName().startsWith(".")) {
@@ -227,7 +228,7 @@ public class IntentBroadcastsController implements Initializable {
         if (listSaved.getSelectionModel().getSelectedItem() == null) {
             DialogUtil.showErrorDialog("Select intent to delete");
         } else {
-            File file = new File(FileUtils.getIntentsFolder(), listSaved.getSelectionModel().getSelectedItem());
+            File file = new File(Preferences.getInstance().getIntentsFolder(), listSaved.getSelectionModel().getSelectedItem());
 
             file.delete();
 

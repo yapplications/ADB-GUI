@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.preferences.Preferences;
 import com.google.gson.Gson;
 
 import application.AdbUtils;
@@ -171,7 +172,7 @@ public class BatchCommandEditController implements Initializable {
 		if (textFieldBatchName.getText().trim().equals("")) {
 			DialogUtil.showErrorDialog("Please fill Batch name");
 		} else {
-			File commandFile = new File(FileUtils.getCommandFolder(), textFieldBatchName.getText());
+			File commandFile = new File(Preferences.getInstance().getCommandFolder(), textFieldBatchName.getText());
 
 			if (commandFile.exists()
 					&& (previousBatchName == null || !previousBatchName.equals(textFieldBatchName.getText()))) {
@@ -182,7 +183,7 @@ public class BatchCommandEditController implements Initializable {
 				String jsonCommandBatch = gson.toJson(commandBatch);
 				try {
 					if (previousBatchName != null) {
-						new File(FileUtils.getCommandFolder(), previousBatchName).delete();
+						new File(Preferences.getInstance().getCommandFolder(), previousBatchName).delete();
 					}
 
 					FileUtils.writeToFile(commandFile.getAbsolutePath(), jsonCommandBatch);

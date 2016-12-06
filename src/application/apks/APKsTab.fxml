@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.CheckBox?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.apks.APKsTabController">
 	<!-- TODO Add Nodes -->
 
@@ -22,8 +23,9 @@
 			</padding>
 		</HBox>
 
-		<HBox alignment="BOTTOM_LEFT" spacing="5">
+		<HBox alignment="CENTER_LEFT" spacing="5">
 			<Button onAction="#handleInstallAction" text="Install" />
+			<CheckBox selected="true" text="Open after install (only if wasn't installed before)" fx:id="checkBoxOpenAfterInstall"/>
 			<Button onAction="#handleObfuscationToolAction" text="De-Obfuscate (Tool)" />
 			<padding>
 				<Insets left="5.0" />

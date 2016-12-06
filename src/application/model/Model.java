@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import application.AdbUtils;
-import application.Preferences;
+import application.preferences.Preferences;
 import application.log.Logger;
 
 public class Model {

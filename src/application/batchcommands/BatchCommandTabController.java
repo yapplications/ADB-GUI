@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import application.AdbUtils;
 import application.DialogUtil;
 import application.FileUtils;
+import application.preferences.Preferences;
 import com.google.gson.Gson;
 
 import javafx.application.Platform;
@@ -193,7 +194,7 @@ public class BatchCommandTabController implements Initializable {
 
 		if (index > -1) {
 			CommandBatch commandBatch = commandBatches.get(index);
-			new File(FileUtils.getCommandFolder(), listBatches.getSelectionModel().getSelectedItem()).delete();
+			new File(Preferences.getInstance().getCommandFolder(), listBatches.getSelectionModel().getSelectedItem()).delete();
 			loadBatches();
 
 
@@ -217,7 +218,7 @@ public class BatchCommandTabController implements Initializable {
 		batchesListItems.clear();
 		commandBatches.clear();
 		listCommands.clear();
-		for (File commandFile : getCommandFolder().listFiles()) {
+		for (File commandFile : Preferences.getInstance().getCommandFolder().listFiles()) {
 			Logger.d("Read: " + commandFile.getName());
 			String commands;
 			if (commandFile.getName().startsWith(".")) {
@@ -239,16 +240,4 @@ public class BatchCommandTabController implements Initializable {
 			}
 		}
 	}
-
-	private File getCommandFolder() {
-		File commandsFolder = new File("commands");
-		if (!commandsFolder.exists()) {
-			boolean folderCreated = commandsFolder.mkdir();
-
-			Logger.d("No commands folder, folder created: " + folderCreated);
-		}
-
-		return commandsFolder;
-	}
-
 }

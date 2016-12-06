@@ -17,28 +17,6 @@ public class FileUtils {
 		return new String(encoded, Charset.defaultCharset());
 	}
 
-	public static File getCommandFolder() {
-		File commandsFolder = new File("commands");
-		if (!commandsFolder.exists()) {
-			boolean folderCreated = commandsFolder.mkdir();
-
-			Logger.d("No commands folder, folder created: " + folderCreated);
-		}
-
-		return commandsFolder;
-	}
-
-	public static File getIntentsFolder() {
-		File commandsFolder = new File("intents");
-		if (!commandsFolder.exists()) {
-			boolean folderCreated = commandsFolder.mkdir();
-
-			Logger.d("No intents folder, folder created: " + folderCreated);
-		}
-
-		return commandsFolder;
-	}
-
 	public static void writeToFile(String path, String jsonCommandBatch) throws IOException {
 
 		if (new File(path).exists()){

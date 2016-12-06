@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.concurrent.*;
 
+import application.preferences.Preferences;
 import javafx.application.Platform;
 import application.log.Logger;
 import application.model.Command;

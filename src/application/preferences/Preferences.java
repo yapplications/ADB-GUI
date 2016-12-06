@@ -1,28 +1,39 @@
-package application;
+package application.preferences;
 
 import java.io.File;
 import java.io.IOException;
 
+import application.DateUtil;
+import application.FileUtils;
 import application.log.Logger;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import application.Preferences.PreferenceObj;
-
 public class Preferences {
-	private static final String PREF_FILE = "preferences";
+
 	private static Preferences instance;
 	private PreferenceObj preferenceObj;
+	private File appFolder = new File("appData/");
+	private File preferenceFile = new File(appFolder, "preferences");
+	private File apksFolder = new File(appFolder, "apks/");
+	private File screenshotsFolder = new File(appFolder, "screenshots/");
+	private File appLogsFolder = new File(appFolder, "app-logs/");
+	private File logcatFolder = new File(appFolder, "logcat-logs/");
+	private File commandsFolder = new File(appFolder, "commands/");
+	private File intentsFolder = new File(appFolder, "intents/");
 
 	private Preferences() {
-		File preferenceFile = new File(PREF_FILE);
+
+		if (!appFolder.exists()){
+			appFolder.mkdirs();
+		}
 
 		if (!preferenceFile.exists()){
 			createDefaultPreferences();
 		} else {
 			Gson gson = new Gson();
 			try {
-				preferenceObj = gson.fromJson(FileUtils.readFile(PREF_FILE), PreferenceObj.class);
+				preferenceObj = gson.fromJson(FileUtils.readFile(preferenceFile.getAbsolutePath()), PreferenceObj.class);
 			} catch (JsonSyntaxException | IOException e) {
 				e.printStackTrace();
 				preferenceObj = new PreferenceObj();
@@ -30,6 +41,26 @@ public class Preferences {
 			}
 		}
 
+	}
+
+	public File getCommandFolder() {
+		if (!commandsFolder.exists()) {
+			boolean folderCreated = commandsFolder.mkdir();
+
+			Logger.d("No commands folder, folder created: " + folderCreated);
+		}
+
+		return commandsFolder;
+	}
+
+	public File getIntentsFolder() {
+		if (!intentsFolder.exists()) {
+			boolean folderCreated = intentsFolder.mkdir();
+
+			Logger.d("No intents folder, folder created: " + folderCreated);
+		}
+
+		return intentsFolder;
 	}
 
 	private void createDefaultPreferences() {
@@ -56,7 +87,7 @@ public class Preferences {
 	}
 
 	public File getLogFile() {
-		File logFolder = new File("app-logs/");
+		File logFolder = appLogsFolder;
 		if (!logFolder.exists()){
 			logFolder.mkdir();
 		}
@@ -65,7 +96,7 @@ public class Preferences {
 	}
 
 	public File getLogFileErr() {
-		File logFolder = new File("app-logs/");
+		File logFolder = appLogsFolder;
 		if (!logFolder.exists()){
 			logFolder.mkdir();
 		}
@@ -78,7 +109,7 @@ public class Preferences {
 	}
 
 	public File getLogcatFolder() {
-		File logFolder = new File("logcat-logs/");
+		File logFolder = logcatFolder;
 		if (!logFolder.exists()){
 			logFolder.mkdir();
 		}
@@ -90,7 +121,7 @@ public class Preferences {
 	    boolean firstRun = true;
 		public String apksFolders = "";
 		public String obfuscationToolPath;
-		public boolean debug = true;
+		public boolean debug = false;
 	}
 
 	public void setAdbPath(String adbPath){
@@ -99,8 +130,8 @@ public class Preferences {
 
 	public void save() throws IOException{
 		Gson gson = new Gson();
-		new File(PREF_FILE).delete();
-		FileUtils.writeToFile(PREF_FILE, gson.toJson(preferenceObj));
+		preferenceFile.delete();
+		FileUtils.writeToFile(preferenceFile.getPath(), gson.toJson(preferenceObj));
 	}
 
 	public String getAdbPath() {
@@ -116,7 +147,7 @@ public class Preferences {
 	}
 
 	public String getPrimaryAPKFolder() {
-		return "apks/";
+		return apksFolder.getAbsolutePath();
 	}
 
 	public String[] getAPKsFolders() {
@@ -150,6 +181,6 @@ public class Preferences {
 	}
 
 	public String getSnapshotFolder() {
-		return "screenshot/";
+		return screenshotsFolder.getAbsolutePath();
 	}
 }

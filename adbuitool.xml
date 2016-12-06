@@ -143,12 +143,15 @@
     <copy todir="${artifact.temp.output.JavaFXApp}">
       <fileset dir="${adbuitool.output.dir}"/>
     </copy>
-    <copy file="${basedir}/../../../../Downloads/gson-2.2.4.jar" tofile="${artifact.temp.output.JavaFXApp}/gson-2.2.4.jar"/>
+    <mkdir dir="${artifact.temp.output.JavaFXApp}/META-INF"/>
+    <copy file="${basedir}/META-INF/MANIFEST.MF" tofile="${artifact.temp.output.JavaFXApp}/META-INF/MANIFEST.MF"/>
+    <mkdir dir="${artifact.temp.output.JavaFXApp}/libs"/>
+    <copy file="${basedir}/../../../../Downloads/gson-2.2.4.jar" tofile="${artifact.temp.output.JavaFXApp}/libs/gson-2.2.4.jar"/>
     <fx:fileset id="all_but_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar">
       <exclude name="JavaFXApp.jar"/>
     </fx:fileset>
     <fx:fileset id="all_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar"/>
-    <fx:application id="JavaFXApp_id" name="JavaFXApp" mainClass="application.Main" version="0.1.3"/>
+    <fx:application id="JavaFXApp_id" name="JavaFXApp" mainClass="application.Main" version="0.1.4"/>
     <fx:jar destfile="${artifact.temp.output.JavaFXApp}/JavaFXApp.jar">
       <fx:application refid="JavaFXApp_id"/>
       <fileset dir="${artifact.temp.output.JavaFXApp}" excludes="**/*.jar"/>
@@ -159,7 +162,7 @@
     </fx:jar>
     <fx:deploy width="700" height="500" updatemode="background" outdir="${artifact.temp.output.JavaFXApp}/deploy" outfile="JavaFXApp">
       <fx:application refid="JavaFXApp_id"/>
-      <fx:info title="ADBUITool" vendor="yapplications"/>
+      <fx:info title="ADB-GUI-Tool" vendor="yapplications"/>
       <fx:resources>
         <fx:fileset refid="all_JavaFXApp"/>
       </fx:resources>

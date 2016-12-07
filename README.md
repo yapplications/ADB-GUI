@@ -28,9 +28,9 @@ The app devided into Device Panel 7 Tabs and status line
 
 Appears at the bottom, most of the commands will update it.
 
-..* Black color text: command is running
-..* Green color text: command executed succesfully
-..* Red   color text: command failed
+  * Black color text: command is running
+  * Green color text: command executed succesfully
+  * Red   color text: command failed
 
 Some commands will appear green result even if the command failed
 
@@ -39,14 +39,14 @@ Some commands will appear green result even if the command failed
 1. Device selection: all device commands that you will execute will be executed on the device you select here
 
 2. Connect device via WiFi: click in order to start working via WiFi
-..* Device should be on the same network as the pc
-..* After pressed there should be an extra device in the list and you can disconnect it from usb.
-..* Connection will be lost if adb / device restarts
+  * Device should be on the same network as the pc
+  * After pressed there should be an extra device in the list and you can disconnect it from usb.
+  * Connection will be lost if adb / device restarts
 
 3. Take snapshot: opens an 'device view' screen
-..* Screen will be updated by itself
-..* Press 'Save' to save a snapshot
-..* You can save as many snapshots as you like in one session
+  * Screen will be updated by itself
+  * Press 'Save' to save a snapshot
+  * You can save as many snapshots as you like in one session
 
 4. Send quick text to device: enter the text you want to send and press enter
 
@@ -81,8 +81,8 @@ Some commands will appear green result even if the command failed
 ## Known Issues
 
 1. Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:
-..* Press "Kill ADB"
-..* Open terminal / command line and write "adb devices" (Running this command from the App not working for some reason)
-..* Press "Start monitoring" to get the device list back
+  * Press "Kill ADB"
+  * Open terminal / command line and write "adb devices" (Running this command from the App not working for some reason)
+  * Press "Start monitoring" to get the device list back
 
 2. Some of the functions will not work if the app is placed in path with spaces

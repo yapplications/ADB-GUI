@@ -6,6 +6,7 @@ import javafx.application.HostServices;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import application.services.DeviceMonitorService;
@@ -32,6 +33,7 @@ public class Main extends Application {
 
 		Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
 		Scene scene = new Scene(root, 1200, 600);
+		primaryStage.getIcons().add(new Image("/res/icon.png"));
 
 		primaryStage.setTitle("ADB GUI");
 		primaryStage.setScene(scene);

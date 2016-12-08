@@ -4,6 +4,11 @@ package application.intentbroadcasts;
  * Created by evgeni.shafran on 11/15/16.
  */
 public class IntentBroadcast {
+
+    public static final String ACTIVITY_MANAGER_COMMAND_START = "start";
+    public static final String ACTIVITY_MANAGER_COMMAND_BROADCAST = "broadcast";
+    public static final String ACTIVITY_MANAGER_COMMAND_START_SERVICE = "startservice";
+
     public String activityManagerCommand = "broadcast";
     public String action;
     public String promptData = "";

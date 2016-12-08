@@ -30,9 +30,6 @@ import static com.sun.activation.registries.LogSupport.log;
 
 public class IntentBroadcastsController implements Initializable {
 
-    private static final String ACTIVITY_MANAGER_COMMAND_START = "start";
-    private static final String ACTIVITY_MANAGER_COMMAND_BROADCAST = "broadcast";
-    private static final String ACTIVITY_MANAGER_COMMAND_START_SERVICE = "startservice";
     public TextField textFieldAction;
     public TextField textFieldData;
     public RadioButton radioButtonActivityManagerCommandStart;
@@ -96,11 +93,11 @@ public class IntentBroadcastsController implements Initializable {
         textFieldMimeType.setText(intentBroadcast.mimeType);
         //textFieldData.setPromptText(intentBroadcast.promptData);
 
-        if (intentBroadcast.activityManagerCommand.equals(ACTIVITY_MANAGER_COMMAND_START)) {
+        if (intentBroadcast.activityManagerCommand.equals(IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START)) {
             radioButtonActivityManagerCommandStart.setSelected(true);
-        } else if (intentBroadcast.activityManagerCommand.equals(ACTIVITY_MANAGER_COMMAND_BROADCAST)) {
+        } else if (intentBroadcast.activityManagerCommand.equals(IntentBroadcast.ACTIVITY_MANAGER_COMMAND_BROADCAST)) {
             radioButtonActivityManagerCommandBroadcast.setSelected(true);
-        } else if (intentBroadcast.activityManagerCommand.equals(ACTIVITY_MANAGER_COMMAND_START_SERVICE)) {
+        } else if (intentBroadcast.activityManagerCommand.equals(IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START_SERVICE)) {
             radioButtonActivityManagerCommandStartService.setSelected(true);
         }
     }
@@ -110,7 +107,7 @@ public class IntentBroadcastsController implements Initializable {
 
         IntentBroadcast intentBroadcast = new IntentBroadcast();
         intentBroadcast.action = "android.intent.action.VIEW";
-        intentBroadcast.activityManagerCommand = ACTIVITY_MANAGER_COMMAND_START;
+        intentBroadcast.activityManagerCommand = IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START;
         //intentBroadcast.promptData = "Can be web url like: http://somewebsite.com";
 
         addIntentBroadcast(intentBroadcast);
@@ -164,12 +161,12 @@ public class IntentBroadcastsController implements Initializable {
 
     private String getActivityManagerCommand() {
         if (radioButtonActivityManagerCommandStartService.isSelected())
-            return ACTIVITY_MANAGER_COMMAND_START_SERVICE;
+            return IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START_SERVICE;
 
         if (radioButtonActivityManagerCommandStart.isSelected())
-            return ACTIVITY_MANAGER_COMMAND_START;
+            return IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START;
 
-        return ACTIVITY_MANAGER_COMMAND_BROADCAST;
+        return IntentBroadcast.ACTIVITY_MANAGER_COMMAND_BROADCAST;
     }
 
     public void onButtonSave(ActionEvent actionEvent) {

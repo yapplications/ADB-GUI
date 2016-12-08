@@ -106,13 +106,13 @@ public class CommandWizardController implements Initializable {
         }
 
         else if (radioButtonFilesPush.isSelected()){
-            command = "push '" + textFieldFilesPushFrom.getText() + "'" + " '" + textFieldFilesPushTo.getText() + "'";
+            command = "push " + textFieldFilesPushFrom.getText() + "" + " " + textFieldFilesPushTo.getText() + "";
             description = "Push file to device";
         } else if (radioButtonFilesPull.isSelected()){
-            command = "pull '" + textFieldFilesPullFrom.getText() + "'" + " '" + textFieldFilesPullTo.getText() + "'";
+            command = "pull " + textFieldFilesPullFrom.getText() + "" + " " + textFieldFilesPullTo.getText() + "";
             description = "Pull file from device";
         } else if (radioButtonFilesInstallApk.isSelected()){
-            command = "install -r '" + textFieldFilesApkPath.getText() + "'";
+            command = "install -r " + textFieldFilesApkPath.getText() + "";
             description = "Install Apk";
         } else if (radioButtonFilesUnInstallApk.isSelected()){
             command = "uninstall " + textFieldFilesUninstallApp.getText();

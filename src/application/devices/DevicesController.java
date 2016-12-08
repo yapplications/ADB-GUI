@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import application.ADBHelper;
 import application.AdbUtils;
 import application.DialogUtil;
+import application.intentbroadcasts.IntentBroadcast;
 import application.screencapture.ScreenCaptureController;
 import application.view.DateTimePickerController;
 import javafx.beans.value.ChangeListener;
@@ -192,5 +193,17 @@ public class DevicesController implements Initializable {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public void onOpenDevSettings(ActionEvent actionEvent) {
+		AdbUtils.executor.execute(new Runnable() {
+			@Override
+			public void run() {
+				IntentBroadcast intent = new IntentBroadcast();
+				intent.activityManagerCommand = IntentBroadcast.ACTIVITY_MANAGER_COMMAND_START;
+				intent.action = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
+				ADBHelper.sendIntent(intent);
+			}
+		});
 	}
 }

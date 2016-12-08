@@ -6,56 +6,70 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea" fx:controller="application.FXMLMainController">
-	<!-- TODO Add Nodes -->
-	<center>
-		<TabPane fx:id="tabPane">
-			<tabs>
-				<Tab text="Batch Command">
-					<content>
-						<fx:include fx:id="mainTabPage" source="batchcommands/BatchCommandTab.fxml" />
-					</content>
-				</Tab>
-				<Tab text="Applications">
-					<content>
-						<fx:include fx:id="applicationTabPage" source="applications/ApplicationsTab.fxml" />
-					</content>
-				</Tab>
-				<Tab text="APKs">
-					<content>
-						<fx:include fx:id="apksTabPage" source="apks/APKsTab.fxml" />
-					</content>
-				</Tab>
-				<Tab text="Intents / Broadcasts">
-					<content>
-						<fx:include fx:id="intentbroadcastTabPage" source="intentbroadcasts/IntentsBroadcastsLayout.fxml" />
-					</content>
-				</Tab>
-				<Tab text="Log / Exceptions">
-					<content>
-						<fx:include fx:id="logexceptionTabPage" source="logexceptions/LogExceptionsLayout.fxml" />
-					</content>
-				</Tab>
-				<Tab text="Terminal">
-					<content>
-						<fx:include fx:id="terminalTabPage" source="FXMLTerminal.fxml" />
-					</content>
-				</Tab>
-				<Tab fx:id="preferenceTabPage" text="Preference">
-					<content>
-						<fx:include source="preferences/PreferenceLayout.fxml" />
-					</content>
-				</Tab>
-			</tabs>
-		</TabPane>
-	</center>
-	<right>
-		<fx:include source="devices/DevicesLayout.fxml" />
-	</right>
-	<bottom>
-		<Label fx:id="labelRunningLog" text="running application.log">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding></Label>
-	</bottom>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.shape.Line?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea"
+            fx:controller="application.FXMLMainController">
+    <!-- TODO Add Nodes -->
+    <center>
+        <TabPane fx:id="tabPane">
+            <tabs>
+                <Tab text="Batch Command">
+                    <content>
+                        <fx:include fx:id="mainTabPage" source="batchcommands/BatchCommandTab.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Applications">
+                    <content>
+                        <fx:include fx:id="applicationTabPage" source="applications/ApplicationsTab.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="APKs">
+                    <content>
+                        <fx:include fx:id="apksTabPage" source="apks/APKsTab.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Intents / Broadcasts">
+                    <content>
+                        <fx:include fx:id="intentbroadcastTabPage"
+                                    source="intentbroadcasts/IntentsBroadcastsLayout.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Log / Exceptions">
+                    <content>
+                        <fx:include fx:id="logexceptionTabPage" source="logexceptions/LogExceptionsLayout.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Terminal">
+                    <content>
+                        <fx:include fx:id="terminalTabPage" source="FXMLTerminal.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="preferenceTabPage" text="Preference">
+                    <content>
+                        <fx:include source="preferences/PreferenceLayout.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <right>
+        <VBox alignment="TOP_CENTER" spacing="5">
+            <fx:include source="devices/DevicesLayout.fxml" />
+            <VBox prefHeight="30" minHeight="30"/>
+            <CheckBox fx:id="checkBoxAlwaysOnTop" onAction="#handleAlwaysOnTop" text="Always on top" prefWidth="200"/>
+            <Button text="Close edit window" wrapText="true" maxWidth="200" prefHeight="Infinity" fx:id="buttonToggleEdit" onAction="#handleToggleMainView"/>
+
+        </VBox>
+    </right>
+    <bottom>
+        <Label fx:id="labelRunningLog" text="running application.log">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+    </bottom>
 </BorderPane>

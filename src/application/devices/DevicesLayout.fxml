@@ -13,7 +13,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.devices.DevicesController">
 	<!-- TODO Add Nodes -->
 
-	<VBox spacing="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+	<VBox spacing="5" maxWidth="200" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
 		<HBox alignment="CENTER_LEFT" spacing="5">
 			<Label text="Devices" />
@@ -21,11 +21,12 @@
 
 		</HBox>
 
-		<ListView fx:id="listDevices" maxWidth="200" prefHeight="120" />
+		<ListView fx:id="listDevices" maxWidth="200" prefHeight="120" minHeight="120"/>
 		<Button onAction="#handleConnectToWifiClicked" maxWidth="Infinity" text="Connect device via WIFI" />
 		<Button onAction="#handleTakeSnapshotClicked" maxWidth="Infinity" text="Take snapshot" />
 		<TextField maxWidth="Infinity" promptText="Send text to device" onAction="#onDeviceInputEnter" fx:id="textFieldDeviceInput"/>
 		<Button text="Change Emulator date" maxWidth="Infinity" onAction="#onChangeEmulatorDate"/>
+		<Button text="Open developer settings on the device" wrapText="true" maxWidth="Infinity" onAction="#onOpenDevSettings"/>
 		<Button text="Open app directory" maxWidth="Infinity" onAction="#onOpenAppDirectory"/>
 	</VBox>
    <padding>

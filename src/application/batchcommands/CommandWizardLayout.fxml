@@ -120,7 +120,7 @@
                                       GridPane.rowIndex="2">
                                     <RadioButton toggleGroup="$toggleGroupSelection" text="Install apk"
                                                  fx:id="radioButtonFilesInstallApk"/>
-                                    <TextField promptText="Apk path on the device" fx:id="textFieldFilesApkPath"/>
+                                    <TextField promptText="Apk path on your pc" fx:id="textFieldFilesApkPath"/>
                                 </HBox>
 
                                 <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0"

@@ -9,22 +9,24 @@ import application.applications.ApplicationsTabController;
 import application.preferences.Preferences;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import application.log.Logger;
 import application.log.Logger.LoggerListener;
+import javafx.stage.Stage;
 
 public class FXMLMainController implements Initializable {
 
 	public static final int TAB_INDEX_APPLICATIONS = 1;
 
 	protected static final int TAB_INDEX_APKS = 2;
+	public Button buttonToggleEdit;
+	public CheckBox checkBoxAlwaysOnTop;
 
 	@FXML
 	private TabPane tabPane;
@@ -108,5 +110,26 @@ public class FXMLMainController implements Initializable {
 	}
 
 
+	public void handleToggleMainView(ActionEvent actionEvent) {
 
+		Stage stage = (Stage) tabPane.getScene().getWindow();
+		if (tabPane.isVisible()){
+			tabPane.setVisible(false);
+			stage.setWidth(210);
+			stage.setResizable(false);
+			buttonToggleEdit.setText("Open edit window");
+
+		} else {
+			tabPane.setVisible(true);
+			stage.setResizable(true);
+			stage.setWidth(1200);
+
+			buttonToggleEdit.setText("Close edit window");
+		}
+	}
+
+	public void handleAlwaysOnTop(ActionEvent actionEvent) {
+		Stage stage = (Stage) tabPane.getScene().getWindow();
+		stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
+	}
 }

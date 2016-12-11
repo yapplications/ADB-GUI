@@ -74,7 +74,7 @@ public class PreferenceController implements Initializable{
 
 	private String getVersion() {
 		Package p = getClass().getPackage();
-		return "0.1.4v";// p.getImplementationVersion();
+		return "0.1.5v";// p.getImplementationVersion();
 	}
 
 	public void handleYapplicationsLink(ActionEvent actionEvent) {

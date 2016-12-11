@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+
+<AnchorPane fx:controller="application.terminal.TerminalController"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <VBox spacing="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets right="5" top="5" bottom="5" left="5"/>
+        </padding>
+        <Text text="Terminal"/>
+        <HBox spacing="10">
+            <TextField fx:id="textField" prefWidth="8000"
+                       text="devices" onAction="#handleSubmitButtonAction"/>
+            <Button text="Go!"
+                    onAction="#handleSubmitButtonAction" minWidth="100"/>
+
+        </HBox>
+        <TextArea editable="false" fx:id="actiontarget" prefWidth="8000" prefHeight="8000"/>
+    </VBox>
+</AnchorPane>
+

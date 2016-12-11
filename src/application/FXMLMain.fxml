@@ -45,7 +45,7 @@
                 </Tab>
                 <Tab text="Terminal">
                     <content>
-                        <fx:include fx:id="terminalTabPage" source="FXMLTerminal.fxml"/>
+                        <fx:include fx:id="terminalTabPage" source="terminal/TerminalLayout.fxml"/>
                     </content>
                 </Tab>
                 <Tab fx:id="preferenceTabPage" text="Preference">

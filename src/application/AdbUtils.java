@@ -58,6 +58,10 @@ public class AdbUtils {
 	}
 
 	public static String getAdbCommand(String command) {
+		if (command.startsWith("adb")){
+			command = command.replaceFirst("adb", "");
+		}
+
 		Device selectedDevice = Model.instance.getSelectedDevice();
 		return Preferences.getInstance().getAdbInstallLocatoin() + "adb "
 				+ (selectedDevice != null ? "-s " + selectedDevice.getId() + " " : "") + command;

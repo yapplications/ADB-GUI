@@ -10,7 +10,7 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 
 * You should have Java and adb (comes with android studio) installed.
 
-1. Dowload: 
+1. Dowload: [ADB-GUI-Tool 0.1.5v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.5v/ADB-GUI-Tool.zip)
 
 2. Unzip to a path **without spaces**  
 

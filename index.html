@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>ADB-GUI-Tool by yapplications</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>ADB-GUI-Tool</h1>
+        <h2></h2>
+        <a href="https://github.com/yapplications/ADB-GUI" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="adb-gui-tool" class="anchor" href="#adb-gui-tool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ADB-GUI-Tool</h1>
+
+<p>UI wrapper around ADB to make life easier for Android Developer and QA</p>
+
+<ul>
+<li>
+<a href="https://github.com/yapplications/ADB-GUI/blob/master/README.md#install">Install</a> </li>
+<li>
+<a href="https://github.com/yapplications/ADB-GUI/blob/master/README.md#use-cases">Use Cases</a> </li>
+<li>
+<a href="https://github.com/yapplications/ADB-GUI/blob/master/README.md#abilities">Abilities</a> </li>
+<li>
+<a href="https://github.com/yapplications/ADB-GUI/blob/master/README.md#known-issues">Known Isseus</a> </li>
+</ul>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install:</h2>
+
+<ul>
+<li><p>You should have Java and adb (comes with android studio) installed.</p></li>
+</ul>
+
+<ol>
+<li><p>Dowload: <a href="https://github.com/yapplications/ADB-GUI/releases/download/0.1.5v/ADB-GUI-Tool.zip">ADB-GUI-Tool 0.1.5v</a></p></li>
+<li><p>Unzip to a path <strong>without spaces</strong>  </p></li>
+<li><p>MAC: give running permission to: ADB-GUI-Tool.jar</p></li>
+<li><p>Run: ADB-GUI-Tool.jar (Double press from finder / explorer or run: <code>java -jar ADB-GUI-Tool.jar</code> from terminal)</p></li>
+<li><p>On first run: change 'adb path' in preference screen to point to your local adb</p></li>
+</ol>
+
+<h2>
+<a id="use-cases" class="anchor" href="#use-cases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use Cases:</h2>
+
+<ol>
+<li>Automate login forms via Batch Commands</li>
+<li>Automate device readiness for QA (install multiple APKs and copy files) via Batch Commands</li>
+<li>Take snapshots easily</li>
+<li>Install APKs</li>
+<li>Test deep linking via Inten / Broadcasts</li>
+<li>Get APKs from device</li>
+<li>Run monkey runner with a simple click</li>
+</ol>
+
+<p>And much more...</p>
+
+<h2>
+<a id="abilities" class="anchor" href="#abilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abilities:</h2>
+
+<p>The app devided into Device Panel 7 Tabs and status line</p>
+
+<h4>
+<a id="status-line" class="anchor" href="#status-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Status line:</h4>
+
+<p>Appears at the bottom, most of the commands will update it.</p>
+
+<ul>
+<li>Black color text: command is running</li>
+<li>Green color text: command executed succesfully</li>
+<li>Red   color text: command failed</li>
+</ul>
+
+<p>Some commands will appear green result even if the command failed</p>
+
+<h4>
+<a id="device-panel" class="anchor" href="#device-panel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Device Panel:</h4>
+
+<ol>
+<li><p>Device selection: all device commands that you will execute will be executed on the device you select here</p></li>
+<li>
+<p>Connect device via WiFi: click in order to start working via WiFi</p>
+
+<ul>
+<li>Device should be on the same network as the pc</li>
+<li>After pressed there should be an extra device in the list and you can disconnect it from usb.</li>
+<li>Connection will be lost if adb / device restarts</li>
+</ul>
+</li>
+<li>
+<p>Take snapshot: opens an 'device view' screen</p>
+
+<ul>
+<li>Screen will be updated by itself</li>
+<li>Press 'Save' to save a snapshot</li>
+<li>You can save as many snapshots as you like in one session</li>
+</ul>
+</li>
+<li><p>Send quick text to device: enter the text you want to send and press enter</p></li>
+<li>
+<p>Change emulator date: opens a dilog for changing emulator time</p>
+
+<ul>
+<li>Works only on emulators</li>
+<li>Will also disable the auto date / time zone update</li>
+<li>If you move to the clock extensively it can jump back</li>
+</ul>
+</li>
+<li><p>Open developer settings on the device</p></li>
+<li><p>Open app directory: open the directory where all the files stored on your pc</p></li>
+</ol>
+
+<h4>
+<a id="tabs" class="anchor" href="#tabs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tabs</h4>
+
+<ol>
+<li>
+<p>Batch command</p>
+
+<ul>
+<li>Create and execute batch adb commands</li>
+<li>You don't need to know the adb command behind it, just use the command wizard tool</li>
+</ul>
+</li>
+<li>
+<p>Applications</p>
+
+<ul>
+<li>Clear app data</li>
+<li>Uninstall app</li>
+<li>Kill all apps process, only on debugble apps, to emulate android memory clean</li>
+<li>Get installed APK from device</li>
+<li>Run monkey runner on any app</li>
+</ul>
+</li>
+<li>
+<p>APKs</p>
+
+<ul>
+<li>Install APK for pc (can configure to show several folders)</li>
+<li>Run de-obfuscation tool (need to be downloaded separately)</li>
+</ul>
+</li>
+<li>
+<p>Intent / Broadcasts</p>
+
+<ul>
+<li>Send broadcast / intents to device</li>
+<li>Save you popular ones for future use</li>
+</ul>
+</li>
+<li>
+<p>Log / Exceptions</p>
+
+<ul>
+<li>See logcat</li>
+<li>Browse through exceptions</li>
+<li>Save exception / log to file</li>
+</ul>
+</li>
+<li>
+<p>Terminal</p>
+
+<ul>
+<li>Expirement with adb commands</li>
+</ul>
+</li>
+<li>
+<p>Preference</p>
+
+<ul>
+<li>Edit app preference</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known Issues</h2>
+
+<ol>
+<li>
+<p>Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:</p>
+
+<ul>
+<li>Press "Kill ADB"</li>
+<li>Open terminal / command line and write "adb devices" (Running this command from the App not working for some reason)</li>
+<li>Press "Start monitoring" to get the device list back</li>
+</ul>
+</li>
+<li><p>Some of the functions will not work if the app is placed in path with spaces</p></li>
+</ol>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/yapplications/ADB-GUI/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/yapplications/ADB-GUI/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/yapplications/ADB-GUI"></a> is maintained by <a href="https://github.com/yapplications">yapplications</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

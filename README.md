@@ -2,8 +2,8 @@
 UI wrapper around ADB to make life easier for Android Developer and QA
 
 [Install](https://github.com/yapplications/ADB-GUI/blob/master/README.md#install) </br>
-[Abilities](https://github.com/yapplications/ADB-GUI/blob/master/README.md#abilities) </br>
 [Use Cases](https://github.com/yapplications/ADB-GUI/blob/master/README.md#use-cases) </br>
+[Abilities](https://github.com/yapplications/ADB-GUI/blob/master/README.md#abilities) </br>
 [Known Isseus](https://github.com/yapplications/ADB-GUI/blob/master/README.md#known-issues) </br>
 
 ## Install:

@@ -16,9 +16,6 @@
     <root id="root">
       <element id="archive" name="JavaFXApp.jar">
         <element id="module-output" name="ADBUITool" />
-        <element id="directory" name="META-INF">
-          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-        </element>
       </element>
       <element id="directory" name="libs">
         <element id="library" level="project" name="gson-2.2.4" />

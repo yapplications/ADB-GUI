@@ -1,5 +1,6 @@
 package application;
 
+import application.log.Logger;
 import application.preferences.Preferences;
 import javafx.application.Application;
 import javafx.application.HostServices;
@@ -13,6 +14,7 @@ import application.services.DeviceMonitorService;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import java.io.File;
 import java.io.PrintStream;
 
 public class Main extends Application {
@@ -27,6 +29,11 @@ public class Main extends Application {
 		if (Preferences.getInstance().isDebug()) {
 			System.setOut(new PrintStream(Preferences.getInstance().getLogFile()));
 			System.setErr(new PrintStream(Preferences.getInstance().getLogFileErr()));
+		}
+
+		if (Preferences.getInstance().isFirstRun()) {
+
+			findADBPath();
 		}
 
 		hostService = getHostServices();
@@ -52,6 +59,24 @@ public class Main extends Application {
 			DialogUtil.showErrorDialog("This app do not support operating from a path with spaces,\n" +
 					"please move the app and start again");
 			System.exit(0);
+		}
+	}
+
+	private void findADBPath() {
+		Logger.d("Find adb on: " + Preferences.OS);
+
+		if (Preferences.OS.startsWith("windows")){
+
+		} else {
+			File baseDirectory = new File("/Users/");
+			for (File file : baseDirectory.listFiles()) {
+				File pathCheck = new File(file, "Library/Android/sdk/platform-tools/");
+				if (pathCheck.exists()){
+					Logger.d("Found adb location: " + pathCheck.getAbsolutePath());
+					Preferences.getInstance().setAdbPath(pathCheck.getAbsolutePath() + "/");
+					break;
+				}
+			}
 		}
 	}
 

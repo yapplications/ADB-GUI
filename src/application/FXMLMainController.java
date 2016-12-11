@@ -52,8 +52,6 @@ public class FXMLMainController implements Initializable {
 
 		if (Preferences.getInstance().isFirstRun()) {
 
-			findADBPath();
-
 			tabPane.getSelectionModel().select(preferenceTabPage);
 			Preferences.getInstance().setFirstRun(false);
 			try {
@@ -95,24 +93,6 @@ public class FXMLMainController implements Initializable {
 				log(Color.GREEN, message);
 			}
 		});
-	}
-
-	private void findADBPath() {
-		Logger.d("Find adb on: " + Preferences.OS);
-
-		if (Preferences.OS.startsWith("windows")){
-
-		} else {
-			File baseDirectory = new File("/Users/");
-			for (File file : baseDirectory.listFiles()) {
-				File pathCheck = new File(file, "Library/Android/sdk/platform-tools/");
-				if (pathCheck.exists()){
-					Logger.d("Found adb location: " + pathCheck.getAbsolutePath());
-					Preferences.getInstance().setAdbPath(pathCheck.getAbsolutePath() + "/");
-					break;
-				}
-			}
-		}
 	}
 
 	protected void log(Color color, String message) {

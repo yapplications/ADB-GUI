@@ -1,5 +1,4 @@
-# ADB-GUI 
-[GitHub Page](https://yapplications.github.io/ADB-GUI/)
+# ADB-GUI - [GitHub Page](https://yapplications.github.io/ADB-GUI/)
 UI wrapper around ADB to make life easier for Android Developer and QA
 
 [Install](https://github.com/yapplications/ADB-GUI/blob/master/README.md#install) </br>

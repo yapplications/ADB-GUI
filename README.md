@@ -20,6 +20,18 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 
 5. On first run: change 'adb path' in preference screen to point to your local adb
 
+## Use Cases:
+
+1. Automate login forms via Batch Commands
+2. Automate device readiness for QA (install multiple APKs and copy files) via Batch Commands
+3. Take snapshots easily
+4. Install APKs
+5. Test deep linking via Inten / Broadcasts
+6. Get APKs from device
+7. Run monkey runner with a simple click
+
+And much more...
+
 ## Abilities:
 
 The app devided into Device Panel 7 Tabs and status line
@@ -51,9 +63,9 @@ Some commands will appear green result even if the command failed
 4. Send quick text to device: enter the text you want to send and press enter
 
 5. Change emulator date: opens a dilog for changing emulator time
-..* Works only on emulators
-..* Will also disable the auto date / time zone update
-..* If you move to the clock extensively it can jump back
+  * Works only on emulators
+  * Will also disable the auto date / time zone update
+  * If you move to the clock extensively it can jump back
 
 6. Open developer settings on the device
 
@@ -62,22 +74,35 @@ Some commands will appear green result even if the command failed
 #### Tabs
 
 1. Batch command
+  * Create and execute batch adb commands
+  * You don't need to know the adb command behind it, just use the command wizard tool
 
 2. Applications
+  * Clear app data
+  * Uninstall app
+  * Kill all apps process, only on debugble apps, to emulate android memory clean
+  * Get installed APK from device
+  * Run monkey runner on any app
 
 3. APKs
+ * Install APK for pc (can configure to show several folders)
+ * Run de-obfuscation tool (need to be downloaded separately)
 
-4. Intent / broadcasts
+4. Intent / Broadcasts
+ * Send broadcast / intents to device
+ * Save you popular ones for future use
 
 5. Log / Exceptions
+ * See logcat
+ * Browse through exceptions
+ * Save exception / log to file
 
 6. Terminal
+  * Expirement with adb commands
 
 7. Preference
-
-
-## Use Cases:
-
+  * Edit app preference
+  
 ## Known Issues
 
 1. Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:

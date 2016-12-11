@@ -2,6 +2,7 @@ package application.preferences;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 
 import application.DateUtil;
 import application.FileUtils;
@@ -11,16 +12,17 @@ import com.google.gson.JsonSyntaxException;
 
 public class Preferences {
 
+	public static final String OS = System.getProperty("os.name").toLowerCase();
 	private static Preferences instance;
 	private PreferenceObj preferenceObj;
-	private File appFolder = new File("appData/");
+	private File appFolder = new File("appData" + File.separator);
 	private File preferenceFile = new File(appFolder, "preferences");
-	private File apksFolder = new File(appFolder, "apks/");
-	private File screenshotsFolder = new File(appFolder, "screenshots/");
-	private File appLogsFolder = new File(appFolder, "app-logs/");
-	private File logcatFolder = new File(appFolder, "logcat-logs/");
-	private File commandsFolder = new File(appFolder, "commands/");
-	private File intentsFolder = new File(appFolder, "intents/");
+	private File apksFolder = new File(appFolder, "apks" + File.separator);
+	private File screenshotsFolder = new File(appFolder, "screenshots" + File.separator);
+	private File appLogsFolder = new File(appFolder, "app-logs" + File.separator);
+	private File logcatFolder = new File(appFolder, "logcat-logs" + File.separator);
+	private File commandsFolder = new File(appFolder, "commands" + File.separator);
+	private File intentsFolder = new File(appFolder, "intents" + File.separator);
 
 	private Preferences() {
 
@@ -117,7 +119,7 @@ public class Preferences {
 	}
 
 	static class PreferenceObj{
-		String adbPath = "/Users/evgeni.shafran/Library/Android/sdk/platform-tools/";
+		String adbPath = "";
 	    boolean firstRun = true;
 		public String apksFolders = "";
 		public String obfuscationToolPath;

@@ -64,21 +64,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Preferences.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/preferences/Preferences.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="881">
+              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+              <folding>
+                <element signature="e#3691#3692#0" expanded="true" />
+                <element signature="e#3731#3732#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TerminalController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdbUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FXMLMainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdbUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/AdbUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="75">
+              <caret line="15" column="66" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#1539#1540#0" expanded="true" />
                 <element signature="e#1591#1592#0" expanded="true" />
@@ -92,7 +125,7 @@
       <file leaf-file-name="TerminalLayout.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalLayout.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="420">
               <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
               <folding />
             </state>
@@ -105,8 +138,8 @@
       <file leaf-file-name="LogExceptionsLayout.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/logexceptions/LogExceptionsLayout.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="11" column="135" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="135" />
+            <state relative-caret-position="435">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -168,14 +201,12 @@
         <option value="$PROJECT_DIR$/src/application/intentbroadcasts/IntentBroadcast.java" />
         <option value="$PROJECT_DIR$/src/application/intentbroadcasts/IntentsBroadcastsLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/GifSequenceWriter.java" />
-        <option value="$PROJECT_DIR$/src/application/FXMLMainController.java" />
         <option value="$PROJECT_DIR$/src/application/FXMLMain.fxml" />
         <option value="$PROJECT_DIR$/src/application/preferences/PreferenceController.java" />
         <option value="$PROJECT_DIR$/src/application/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/application/batchcommands/BatchCommandEditController.java" />
         <option value="$PROJECT_DIR$/src/application/intentbroadcasts/IntentBroadcastsController.java" />
         <option value="$PROJECT_DIR$/src/application/batchcommands/BatchCommandTabController.java" />
-        <option value="$PROJECT_DIR$/src/application/preferences/Preferences.java" />
         <option value="$PROJECT_DIR$/src/application/preferences/PreferenceLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/ADBHelper.java" />
         <option value="$PROJECT_DIR$/src/application/apks/APKsTabController.java" />
@@ -183,6 +214,8 @@
         <option value="$PROJECT_DIR$/src/application/terminal/TerminalController.java" />
         <option value="$PROJECT_DIR$/src/application/terminal/TerminalLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/AdbUtils.java" />
+        <option value="$PROJECT_DIR$/src/application/preferences/Preferences.java" />
+        <option value="$PROJECT_DIR$/src/application/FXMLMainController.java" />
       </list>
     </option>
   </component>
@@ -496,7 +529,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -505,7 +538,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3780332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3780332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25107297" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -775,6 +808,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#11320#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -786,18 +823,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/GifSequenceWriter.java" />
-    <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/awt/Desktop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3101">
           <caret line="427" column="44" selection-start-line="427" selection-start-column="24" selection-end-line="427" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,6 +852,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -837,6 +868,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="1205" column="18" selection-start-line="1205" selection-start-column="18" selection-end-line="1205" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,47 +903,6 @@
         <state relative-caret-position="90">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/preferences/Preferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
-          <folding>
-            <element signature="e#2198#2199#0" expanded="false" />
-            <element signature="e#2233#2234#0" expanded="false" />
-            <element signature="e#3136#3137#0" expanded="false" />
-            <element signature="e#3174#3175#0" expanded="false" />
-            <element signature="e#3381#3382#0" expanded="false" />
-            <element signature="e#3416#3417#0" expanded="false" />
-            <element signature="e#3448#3449#0" expanded="false" />
-            <element signature="e#3485#3486#0" expanded="false" />
-            <element signature="e#3531#3532#0" expanded="false" />
-            <element signature="e#3571#3572#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4088#4089#0" expanded="false" />
-            <element signature="e#4128#4129#0" expanded="false" />
-            <element signature="e#4168#4169#0" expanded="false" />
-            <element signature="e#4211#4212#0" expanded="false" />
-            <element signature="e#4258#4259#0" expanded="false" />
-            <element signature="e#4310#4311#0" expanded="false" />
-            <element signature="e#4357#4358#0" expanded="false" />
-            <element signature="e#4395#4396#0" expanded="false" />
-            <element signature="e#4444#4445#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
-            <element signature="e#1702#1703#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,10 +996,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/logexceptions/LogExceptionsLayout.fxml">
+    <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="11" column="135" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="135" />
+        <state relative-caret-position="420">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1016,10 +1007,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalLayout.fxml">
+    <entry file="file://$PROJECT_DIR$/src/application/logexceptions/LogExceptionsLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1029,22 +1020,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/AdbUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+        <state relative-caret-position="75">
+          <caret line="15" column="66" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#1539#1540#0" expanded="true" />
             <element signature="e#1591#1592#0" expanded="true" />
             <element signature="e#2768#2769#0" expanded="true" />
             <element signature="e#2811#2812#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/preferences/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="881">
+          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+          <folding>
+            <element signature="e#3691#3692#0" expanded="true" />
+            <element signature="e#3731#3732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

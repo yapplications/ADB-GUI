@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +17,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import application.log.Logger;
 import application.log.Logger.LoggerListener;
@@ -45,8 +49,12 @@ public class FXMLMainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		findADBPath();
 
 		if (Preferences.getInstance().isFirstRun()) {
+
+			findADBPath();
+
 			tabPane.getSelectionModel().select(preferenceTabPage);
 			Preferences.getInstance().setFirstRun(false);
 			try {
@@ -88,6 +96,24 @@ public class FXMLMainController implements Initializable {
 				log(Color.GREEN, message);
 			}
 		});
+	}
+
+	private void findADBPath() {
+		Logger.d("Find adb on: " + Preferences.OS);
+
+		if (Preferences.OS.startsWith("windows")){
+
+		} else {
+			File baseDirectory = new File("/Users/");
+			for (File file : baseDirectory.listFiles()) {
+				File pathCheck = new File(file, "Library/Android/sdk/platform-tools/");
+				if (pathCheck.exists()){
+					Logger.d("Found adb location: " + pathCheck.getAbsolutePath());
+					Preferences.getInstance().setAdbPath(pathCheck.getAbsolutePath() + "/");
+					break;
+				}
+			}
+		}
 	}
 
 	protected void log(Color color, String message) {

@@ -32,318 +32,330 @@ import javafx.scene.layout.VBox;
 
 public class BatchCommandEditController implements Initializable {
 
-	private static final int TYPE_INDEX_ADB = 0;
+    private static final int TYPE_INDEX_ADB = 0;
 
-	@FXML
-	private BatchCommandsListView listViewCommands;
+    @FXML
+    private BatchCommandsListView listViewCommands;
 
-	@FXML
-	private TextArea textAreaLog;
+    @FXML
+    private TextArea textAreaLog;
 
-	@FXML
-	private TextField textFieldDescription;
+    @FXML
+    private TextField textFieldDescription;
 
-	@FXML
-	private TextField textFieldBatchName;
+    @FXML
+    private TextField textFieldBatchName;
 
-	@FXML
-	private TextArea textAreaCommand;
+    @FXML
+    private TextArea textAreaCommand;
 
-	@FXML
-	private TextField textFieldIndex;
+    @FXML
+    private TextField textFieldIndex;
 
-	@FXML
-	private ComboBox<String> comboBoxCommandType;
+    @FXML
+    private ComboBox<String> comboBoxCommandType;
 
-	@FXML
-	private Button buttonCreateCommand;
+    @FXML
+    private Button buttonCreateCommand;
 
-	private CommandBatch commandBatch;
+    private CommandBatch commandBatch;
 
-	private String previousBatchName;
+    private String previousBatchName;
 
-	private int editIndex = -1;
+    private int editIndex = -1;
 
-	@FXML
-	VBox panelCenter;
+    @FXML
+    VBox panelCenter;
 
-	@FXML
-	Button buttonSave;
+    @FXML
+    Button buttonSave;
 
-	protected int runningIndex = -1;
+    protected int runningIndex = -1;
+    private BatchCommandEditControllerListener batchCommandEditControllerListener;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+    public interface BatchCommandEditControllerListener {
+        void onBatchCommandUpdated();
+    }
 
-		comboBoxCommandType.getSelectionModel().select(TYPE_INDEX_ADB);
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
-		textFieldIndex.textProperty().addListener(new ChangeListener<String>() {
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				checkIndexIsValid(oldValue, newValue);
-			}
-		});
-		commandBatch = new CommandBatch();
-		updateCommandsList();
-		updateIndexToLast();
-	}
+        comboBoxCommandType.getSelectionModel().select(TYPE_INDEX_ADB);
 
-	private void updateIndexToLast() {
-		textFieldIndex.setText(Integer.toString(commandBatch.commands.size()));
-	}
+        textFieldIndex.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                checkIndexIsValid(oldValue, newValue);
+            }
+        });
+        commandBatch = new CommandBatch();
+        updateCommandsList();
+        updateIndexToLast();
+    }
 
-	protected void checkIndexIsValid(String oldValue, String newValue) {
-		if (newValue.trim().equals("")) {
-			textFieldIndex.setText("0");
-		} else {
+    private void updateIndexToLast() {
+        textFieldIndex.setText(Integer.toString(commandBatch.commands.size()));
+    }
 
-			if (!newValue.matches("\\d*")) {
-				if (newValue.matches("\\d*")) {
+    protected void checkIndexIsValid(String oldValue, String newValue) {
+        if (newValue.trim().equals("")) {
+            textFieldIndex.setText("0");
+        } else {
 
-				} else {
-					textFieldIndex.setText(oldValue);
-				}
-			} else {
-				int value = Integer.parseInt(newValue);
-				if (value > commandBatch.commands.size()) {
-					textFieldIndex.setText(Integer.toString(commandBatch.commands.size()));
-				}
-			}
-		}
-	}
+            if (!newValue.matches("\\d*")) {
+                if (newValue.matches("\\d*")) {
 
-	private void log(String text) {
-		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-				textAreaLog.appendText(text + "\n");
-			}
-		});
-	}
+                } else {
+                    textFieldIndex.setText(oldValue);
+                }
+            } else {
+                int value = Integer.parseInt(newValue);
+                if (value > commandBatch.commands.size()) {
+                    textFieldIndex.setText(Integer.toString(commandBatch.commands.size()));
+                }
+            }
+        }
+    }
 
-	@FXML
-	public void onCreateCommandClicked(ActionEvent event) {
-		String commandString = textAreaCommand.getText().trim();
-		String description = textFieldDescription.getText().trim();
-		String type = getCommandType();
-		if (commandString.equals("")) {
-			DialogUtil.showErrorDialog("Please enter the command line");
-		} else {
-			Command command;
-			if (editIndex == -1) {
-				command = new Command();
-			} else {
-				command = commandBatch.commands.get(editIndex);
-			}
+    private void log(String text) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                textAreaLog.appendText(text + "\n");
+            }
+        });
+    }
 
-			command.command = commandString;
-			command.description = description;
-			command.type = type;
+    @FXML
+    public void onCreateCommandClicked(ActionEvent event) {
+        String commandString = textAreaCommand.getText().trim();
+        String description = textFieldDescription.getText().trim();
+        String type = getCommandType();
+        if (commandString.equals("")) {
+            DialogUtil.showErrorDialog("Please enter the command line");
+        } else {
+            Command command;
+            if (editIndex == -1) {
+                command = new Command();
+            } else {
+                command = commandBatch.commands.get(editIndex);
+            }
 
-			int index = Integer.parseInt(textFieldIndex.getText());
+            command.command = commandString;
+            command.description = description;
+            command.type = type;
 
-			if (editIndex > -1) {
-				commandBatch.commands.remove(editIndex);
-				if (editIndex < index) {
-					index--;
-				}
-			}
+            int index = Integer.parseInt(textFieldIndex.getText());
 
-			commandBatch.commands.add(index, command);
+            if (editIndex > -1) {
+                commandBatch.commands.remove(editIndex);
+                if (editIndex < index) {
+                    index--;
+                }
+            }
 
-			updateCommandsList();
-			updateIndexToLast();
-			clearCommandFields();
-			exitEditMode();
-		}
-	}
+            commandBatch.commands.add(index, command);
 
-	private void updateCommandsList() {
-		listViewCommands.update(commandBatch.commands, runningIndex);
-	}
+            updateCommandsList();
+            updateIndexToLast();
+            clearCommandFields();
+            exitEditMode();
+        }
+    }
 
-	private String getCommandType() {
-		return Command.TYPE_ADB;
-	}
+    private void updateCommandsList() {
+        listViewCommands.update(commandBatch.commands, runningIndex);
+    }
 
-	@FXML
-	public void onSaveClicked(ActionEvent event) {
+    private String getCommandType() {
+        return Command.TYPE_ADB;
+    }
 
-		if (textFieldBatchName.getText().trim().equals("")) {
-			DialogUtil.showErrorDialog("Please fill Batch name");
-		} else {
-			File commandFile = new File(Preferences.getInstance().getCommandFolder(), textFieldBatchName.getText());
+    @FXML
+    public void onSaveClicked(ActionEvent event) {
 
-			if (commandFile.exists()
-					&& (previousBatchName == null || !previousBatchName.equals(textFieldBatchName.getText()))) {
-				DialogUtil.showErrorDialog("File already exists choose another name: " + commandFile);
+        if (textFieldBatchName.getText().trim().equals("")) {
+            DialogUtil.showErrorDialog("Please fill Batch name");
+        } else {
+            File commandFile = new File(Preferences.getInstance().getCommandFolder(), textFieldBatchName.getText());
 
-			} else {
-				Gson gson = new Gson();
-				String jsonCommandBatch = gson.toJson(commandBatch);
-				try {
-					if (previousBatchName != null) {
-						new File(Preferences.getInstance().getCommandFolder(), previousBatchName).delete();
-					}
+            if (commandFile.exists()
+                    && (previousBatchName == null || !previousBatchName.equals(textFieldBatchName.getText()))) {
+                DialogUtil.showErrorDialog("File already exists choose another name: " + commandFile);
 
-					FileUtils.writeToFile(commandFile.getAbsolutePath(), jsonCommandBatch);
-					((Stage) textFieldBatchName.getScene().getWindow()).close();
-				} catch (IOException e) {
-					e.printStackTrace();
-					log(e.getMessage());
-				}
-			}
-		}
-	}
+            } else {
+                Gson gson = new Gson();
+                String jsonCommandBatch = gson.toJson(commandBatch);
+                try {
+                    if (previousBatchName != null) {
+                        new File(Preferences.getInstance().getCommandFolder(), previousBatchName).delete();
+                    }
 
-	@FXML
-	public void onCancelCommandClicked(ActionEvent event) {
-		exitEditMode();
-		clearCommandFields();
-	}
+                    FileUtils.writeToFile(commandFile.getAbsolutePath(), jsonCommandBatch);
+                    batchCommandEditControllerListener.onBatchCommandUpdated();
+                    ((Stage) textFieldBatchName.getScene().getWindow()).close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    log(e.getMessage());
+                }
+            }
+        }
+    }
 
-	private void clearCommandFields() {
-		textAreaCommand.setText("");
-		textFieldDescription.setText("");
-		updateIndexToLast();
-	}
+    @FXML
+    public void onCancelCommandClicked(ActionEvent event) {
+        exitEditMode();
+        clearCommandFields();
+    }
 
-	@FXML
-	public void onDeleteCommandClicked(ActionEvent event) {
-		int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
-		if (selectedIndex >= 0) {
-			commandBatch.commands.remove(selectedIndex);
-			updateCommandsList();
-			updateIndexToLast();
-		} else {
-			showSelectCommandFirstErrorDialog();
-		}
-	}
+    private void clearCommandFields() {
+        textAreaCommand.setText("");
+        textFieldDescription.setText("");
+        updateIndexToLast();
+    }
 
-	private void showSelectCommandFirstErrorDialog() {
-		DialogUtil.showErrorDialog("Please select command first");
-	}
+    @FXML
+    public void onDeleteCommandClicked(ActionEvent event) {
+        int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            commandBatch.commands.remove(selectedIndex);
+            updateCommandsList();
+            updateIndexToLast();
+        } else {
+            showSelectCommandFirstErrorDialog();
+        }
+    }
 
-	@FXML
-	public void onEditCommandClicked(ActionEvent event) {
-		int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
-		if (selectedIndex >= 0) {
-			editIndex = selectedIndex;
-			enterEditMode();
-		} else {
-			showSelectCommandFirstErrorDialog();
-		}
-	}
+    private void showSelectCommandFirstErrorDialog() {
+        DialogUtil.showErrorDialog("Please select command first");
+    }
 
-	@FXML
-	public void onRunAllCommandsClicked(ActionEvent event) {
-		AdbUtils.executor.execute(new Runnable() {
+    @FXML
+    public void onEditCommandClicked(ActionEvent event) {
+        int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            editIndex = selectedIndex;
+            enterEditMode();
+        } else {
+            showSelectCommandFirstErrorDialog();
+        }
+    }
 
-			@Override
-			public void run() {
-				for (int i = 0; i < commandBatch.commands.size(); i++) {
-					updateRunningIndex(i);
-					executeCommand(i);
-				}
+    @FXML
+    public void onRunAllCommandsClicked(ActionEvent event) {
+        AdbUtils.executor.execute(new Runnable() {
 
-				updateRunningIndex(-1);
-				log("Finished executing commands");
-			}
-		});
-	}
+            @Override
+            public void run() {
+                for (int i = 0; i < commandBatch.commands.size(); i++) {
+                    updateRunningIndex(i);
+                    executeCommand(i);
+                }
 
-	protected void updateRunningIndex(int i) {
-		runningIndex = i;
-		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-				updateCommandsList();
-			}
-		});
-	}
+                updateRunningIndex(-1);
+                log("Finished executing commands");
+            }
+        });
+    }
 
-	protected void executeCommand(int i) {
-		updateRunningIndex(i);
-		Command command = commandBatch.commands.get(i);
-		log("Run: " + command.command);
-		log(AdbUtils.run(command));
-		updateRunningIndex(-1);
-	}
+    protected void updateRunningIndex(int i) {
+        runningIndex = i;
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                updateCommandsList();
+            }
+        });
+    }
 
-	@FXML
-	public void onRunSelectedCommandClicked(ActionEvent event) {
-		int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
-		if (selectedIndex >= 0) {
-			AdbUtils.executor.execute(new Runnable() {
+    protected void executeCommand(int i) {
+        updateRunningIndex(i);
+        Command command = commandBatch.commands.get(i);
+        log("Run: " + command.command);
+        log(AdbUtils.run(command));
+        updateRunningIndex(-1);
+    }
 
-				@Override
-				public void run() {
-					executeCommand(selectedIndex);
-					log("Finished executing command");
-				}
-			});
-		} else {
-			showSelectCommandFirstErrorDialog();
-		}
-	}
+    @FXML
+    public void onRunSelectedCommandClicked(ActionEvent event) {
+        int selectedIndex = listViewCommands.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            AdbUtils.executor.execute(new Runnable() {
 
-	private void enterEditMode() {
-		buttonCreateCommand.setText("Save");
-		panelCenter.setDisable(true);
-		buttonSave.setDisable(true);
-		Command command = commandBatch.commands.get(editIndex);
-		textAreaCommand.setText(command.command);
-		textFieldDescription.setText(command.description);
-		textFieldIndex.setText(Integer.toString(editIndex));
-	}
+                @Override
+                public void run() {
+                    executeCommand(selectedIndex);
+                    log("Finished executing command");
+                }
+            });
+        } else {
+            showSelectCommandFirstErrorDialog();
+        }
+    }
 
-	private void exitEditMode() {
-		editIndex = -1;
-		buttonCreateCommand.setText("Create");
-		panelCenter.setDisable(false);
-		buttonSave.setDisable(false);
-	}
+    private void enterEditMode() {
+        buttonCreateCommand.setText("Save");
+        panelCenter.setDisable(true);
+        buttonSave.setDisable(true);
+        Command command = commandBatch.commands.get(editIndex);
+        textAreaCommand.setText(command.command);
+        textFieldDescription.setText(command.description);
+        textFieldIndex.setText(Integer.toString(editIndex));
+    }
 
-	public static void showScreen(Class class1, CommandBatch commandBatch, String name) throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(class1.getResource("/application/batchcommands/BatchCommandEditLayout.fxml"));
+    private void exitEditMode() {
+        editIndex = -1;
+        buttonCreateCommand.setText("Create");
+        panelCenter.setDisable(false);
+        buttonSave.setDisable(false);
+    }
 
-		Parent root1 = (Parent) fxmlLoader.load();
+    public static void showScreen(Class class1, CommandBatch commandBatch, String name,
+                                  BatchCommandEditControllerListener batchCommandEditControllerListener) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(class1.getResource("/application/batchcommands/BatchCommandEditLayout.fxml"));
 
-		BatchCommandEditController controller = fxmlLoader.<BatchCommandEditController>getController();
-		controller.setCommandBatch(commandBatch, name);
+        Parent root1 = (Parent) fxmlLoader.load();
 
-		Stage stage = new Stage();
-		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.setTitle("Create new batch");
-		stage.setScene(new Scene(root1));
-		stage.show();
-	}
+        BatchCommandEditController controller = fxmlLoader.<BatchCommandEditController>getController();
+        controller.setCommandBatch(commandBatch, name);
+        controller.setBatchCommandEditControllerListener(batchCommandEditControllerListener);
 
-	private void setCommandBatch(CommandBatch commandBatch, String name) {
-		this.previousBatchName = name;
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Create new batch");
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
 
-		if (previousBatchName != null) {
-			textFieldBatchName.setText(previousBatchName);
-		}
+    private void setBatchCommandEditControllerListener(BatchCommandEditControllerListener batchCommandEditControllerListener) {
+        this.batchCommandEditControllerListener = batchCommandEditControllerListener;
+    }
 
-		if (commandBatch != null) {
-			this.commandBatch = commandBatch;
-			updateCommandsList();
-			updateIndexToLast();
-		}
-	}
+    private void setCommandBatch(CommandBatch commandBatch, String name) {
+        this.previousBatchName = name;
 
-	public void onCommandWizardClicked(ActionEvent actionEvent) {
-		try {
-			CommandWizardController.showScreen(getClass(), new CommandWizardController.CommandWizardControllerListener() {
-				@Override
-				public void onCommandSelected(String command, String description) {
-					textAreaCommand.setText(command);
-					textFieldDescription.setText(description);
-				}
-			});
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+        if (previousBatchName != null) {
+            textFieldBatchName.setText(previousBatchName);
+        }
+
+        if (commandBatch != null) {
+            this.commandBatch = commandBatch;
+            updateCommandsList();
+            updateIndexToLast();
+        }
+    }
+
+    public void onCommandWizardClicked(ActionEvent actionEvent) {
+        try {
+            CommandWizardController.showScreen(getClass(), new CommandWizardController.CommandWizardControllerListener() {
+                @Override
+                public void onCommandSelected(String command, String description) {
+                    textAreaCommand.setText(command);
+                    textFieldDescription.setText(description);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

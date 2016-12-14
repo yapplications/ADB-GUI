@@ -148,7 +148,7 @@ public class BatchCommandTabController implements Initializable {
 	@FXML
 	private void handleCreateNewClicked(ActionEvent event) {
 		try {
-			BatchCommandEditController.showScreen(getClass(), null, null);
+			BatchCommandEditController.showScreen(getClass(), null, null, batchCommandEditControllerListener);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -162,7 +162,7 @@ public class BatchCommandTabController implements Initializable {
 			try {
 				CommandBatch commandBatch = commandBatches.get(index);
 
-				BatchCommandEditController.showScreen(getClass(), commandBatch, listBatches.getSelectionModel().getSelectedItem());
+				BatchCommandEditController.showScreen(getClass(), commandBatch, listBatches.getSelectionModel().getSelectedItem(), batchCommandEditControllerListener);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -179,7 +179,7 @@ public class BatchCommandTabController implements Initializable {
 			try {
 				CommandBatch commandBatch = commandBatches.get(index);
 
-				BatchCommandEditController.showScreen(getClass(), commandBatch, null);
+				BatchCommandEditController.showScreen(getClass(), commandBatch, null, batchCommandEditControllerListener);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -211,6 +211,13 @@ public class BatchCommandTabController implements Initializable {
 	private void handleRefreshClicked(ActionEvent event) {
 		loadBatches();
 	}
+
+	private BatchCommandEditController.BatchCommandEditControllerListener batchCommandEditControllerListener = new BatchCommandEditController.BatchCommandEditControllerListener() {
+		@Override
+		public void onBatchCommandUpdated() {
+			loadBatches();
+		}
+	};
 
 	private void loadBatches() {
 

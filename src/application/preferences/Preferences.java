@@ -118,12 +118,37 @@ public class Preferences {
 		return logFolder;
 	}
 
+	public void setEditWindowIsOpen(boolean isEditWindowOpen) {
+		preferenceObj.isEditWindowOpen = isEditWindowOpen;
+		try {
+			save();
+		} catch (IOException e) {}
+	}
+
+	public boolean isEditWindowIsOpen(){
+		return preferenceObj.isEditWindowOpen;
+	}
+
+	public void setWindowIsAlwaysOn(boolean windowIsAlwaysOn) {
+		preferenceObj.windowIsAlwaysOn = windowIsAlwaysOn;
+
+		try {
+			save();
+		} catch (IOException e) {}
+	}
+
+	public boolean isWindowIsAlwaysOn(){
+		return preferenceObj.windowIsAlwaysOn;
+	}
+
 	static class PreferenceObj{
 		String adbPath = "";
 	    boolean firstRun = true;
 		public String apksFolders = "";
 		public String obfuscationToolPath;
 		public boolean debug = false;
+		public boolean isEditWindowOpen = true;
+		public boolean windowIsAlwaysOn;
 	}
 
 	public void setAdbPath(String adbPath){

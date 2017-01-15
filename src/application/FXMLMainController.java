@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import application.apks.APKsTabController;
 import application.applications.ApplicationsTabController;
 import application.preferences.Preferences;
+import com.sun.prism.PresentableState;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -27,17 +29,17 @@ import javafx.stage.Stage;
 
 public class FXMLMainController implements Initializable {
 
-	public static final int TAB_INDEX_APPLICATIONS = 1;
+    public static final int TAB_INDEX_APPLICATIONS = 1;
 
-	protected static final int TAB_INDEX_APKS = 2;
-	public Button buttonToggleEdit;
-	public CheckBox checkBoxAlwaysOnTop;
+    protected static final int TAB_INDEX_APKS = 2;
+    public Button buttonToggleEdit;
+    public CheckBox checkBoxAlwaysOnTop;
 
-	@FXML
-	private TabPane tabPane;
+    @FXML
+    private TabPane tabPane;
 
-	@FXML
-	private Tab preferenceTabPage;
+    @FXML
+    private Tab preferenceTabPage;
 
     @FXML
     private ApplicationsTabController applicationTabPageController;
@@ -48,104 +50,128 @@ public class FXMLMainController implements Initializable {
     @FXML
     private Label labelRunningLog;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
-		if (Preferences.getInstance().isFirstRun()) {
+        if (Preferences.getInstance().isFirstRun()) {
 
-			tabPane.getSelectionModel().select(preferenceTabPage);
-			Preferences.getInstance().setFirstRun(false);
-			try {
-				Preferences.getInstance().save();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+            tabPane.getSelectionModel().select(preferenceTabPage);
+            Preferences.getInstance().setFirstRun(false);
+            try {
+                Preferences.getInstance().save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-		tabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+        tabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
-			@Override
-			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-				if (oldValue.equals(TAB_INDEX_APPLICATIONS)){
-					applicationTabPageController.stopWorking();
-				} else if (newValue.equals(TAB_INDEX_APPLICATIONS)){
-					applicationTabPageController.startWorking();
-				}
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if (oldValue.equals(TAB_INDEX_APPLICATIONS)) {
+                    applicationTabPageController.stopWorking();
+                } else if (newValue.equals(TAB_INDEX_APPLICATIONS)) {
+                    applicationTabPageController.startWorking();
+                }
 
-				if (newValue.equals(TAB_INDEX_APKS)){
-					apksTabPageController.refreshList();
-				}
-			}
-		});
+                if (newValue.equals(TAB_INDEX_APKS)) {
+                    apksTabPageController.refreshList();
+                }
+            }
+        });
 
-		Logger.setShowLogListener(new LoggerListener() {
-			@Override
-			public void onNewLogToShow(String message) {
-				log(Color.BLACK, message);
-			}
+        Logger.setShowLogListener(new LoggerListener() {
+            @Override
+            public void onNewLogToShow(String message) {
+                log(Color.BLACK, message);
+            }
 
-			@Override
-			public void onNewErrorLogToShow(String message) {
-				log(Color.RED, message);
-			}
+            @Override
+            public void onNewErrorLogToShow(String message) {
+                log(Color.RED, message);
+            }
 
-			@Override
-			public void onFinishLogToShow(String message) {
-				log(Color.GREEN, message);
-			}
-		});
-	}
+            @Override
+            public void onFinishLogToShow(String message) {
+                log(Color.GREEN, message);
+            }
+        });
 
-	protected void log(Color color, String message) {
-		labelRunningLog.setTextFill(color);
-		labelRunningLog.setText(message);
-	}
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                checkBoxAlwaysOnTop.setSelected(Preferences.getInstance().isWindowIsAlwaysOn());
+                handleAlwaysOnTop(null);
 
-	protected ApplicationsTabController getApplicationController() {
+                if (!Preferences.getInstance().
+                        isEditWindowIsOpen()) {
+                    handleToggleMainView(null);
+                }
+            }
+        });
+    }
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("applications/ApplicationsTab.fxml"));
+    protected void log(Color color, String message) {
+        labelRunningLog.setTextFill(color);
+        labelRunningLog.setText(message);
+    }
 
-		try {
-			Parent root1 = (Parent) fxmlLoader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		ApplicationsTabController controller = fxmlLoader.<ApplicationsTabController>getController();
+    protected ApplicationsTabController getApplicationController() {
 
-		return controller;
-	}
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("applications/ApplicationsTab.fxml"));
+
+        try {
+            Parent root1 = (Parent) fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ApplicationsTabController controller = fxmlLoader.<ApplicationsTabController>getController();
+
+        return controller;
+    }
 
 
-	public void handleToggleMainView(ActionEvent actionEvent) {
+    public void handleToggleMainView(ActionEvent actionEvent) {
 
-		Stage stage = (Stage) tabPane.getScene().getWindow();
-		if (tabPane.isVisible()){
-			tabPane.setVisible(false);
-			stage.setWidth(210);
-			stage.setResizable(false);
-			buttonToggleEdit.setText("Open edit window");
+        Logger.d("tabPane  " + tabPane);
+        Logger.d("tabPane.getScene()  " + tabPane.getScene());
 
-		} else {
-			tabPane.setVisible(true);
-			stage.setResizable(true);
-			stage.setWidth(1200);
+        Stage stage = (Stage) tabPane.getScene().getWindow();
+        if (tabPane.isVisible()) {
+            tabPane.setVisible(false);
+            stage.setWidth(210);
+            stage.setResizable(false);
+            buttonToggleEdit.setText("Open edit window");
 
-			buttonToggleEdit.setText("Close edit window");
-		}
-	}
+        } else {
+            tabPane.setVisible(true);
+            stage.setResizable(true);
+            stage.setWidth(1200);
 
-	public void handleAlwaysOnTop(ActionEvent actionEvent) {
-		Stage stage = (Stage) tabPane.getScene().getWindow();
-		stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
-	}
+            buttonToggleEdit.setText("Close edit window");
+        }
 
-	public void onOpenAppDirectory(ActionEvent actionEvent) {
-		if (Desktop.isDesktopSupported()) {
-			try {
-				Desktop.getDesktop().open(Preferences.getInstance().getAppFolder());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+        if (actionEvent != null) {
+            Preferences.getInstance().setEditWindowIsOpen(tabPane.isVisible());
+        }
+    }
+
+    public void handleAlwaysOnTop(ActionEvent actionEvent) {
+        Stage stage = (Stage) tabPane.getScene().getWindow();
+        stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
+
+        if (actionEvent != null) {
+            Preferences.getInstance().setWindowIsAlwaysOn(checkBoxAlwaysOnTop.isSelected());
+        }
+    }
+
+    public void onOpenAppDirectory(ActionEvent actionEvent) {
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().open(Preferences.getInstance().getAppFolder());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

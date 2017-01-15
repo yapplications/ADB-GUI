@@ -143,15 +143,13 @@
     <copy todir="${artifact.temp.output.JavaFXApp}">
       <fileset dir="${adbuitool.output.dir}"/>
     </copy>
-    <mkdir dir="${artifact.temp.output.JavaFXApp}/META-INF"/>
-    <copy file="${basedir}/META-INF/MANIFEST.MF" tofile="${artifact.temp.output.JavaFXApp}/META-INF/MANIFEST.MF"/>
     <mkdir dir="${artifact.temp.output.JavaFXApp}/libs"/>
     <copy file="${basedir}/libs/gson-2.2.4.jar" tofile="${artifact.temp.output.JavaFXApp}/libs/gson-2.2.4.jar"/>
     <fx:fileset id="all_but_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar">
       <exclude name="JavaFXApp.jar"/>
     </fx:fileset>
     <fx:fileset id="all_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar"/>
-    <fx:application id="JavaFXApp_id" name="JavaFXApp" mainClass="application.Main" version="0.1.5"/>
+    <fx:application id="JavaFXApp_id" name="JavaFXApp" mainClass="application.Main" version="0.1.6"/>
     <fx:jar destfile="${artifact.temp.output.JavaFXApp}/JavaFXApp.jar">
       <fx:application refid="JavaFXApp_id"/>
       <fileset dir="${artifact.temp.output.JavaFXApp}" excludes="**/*.jar"/>

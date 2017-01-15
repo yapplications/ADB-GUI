@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import application.AdbUtils;
 import application.DialogUtil;
 import application.FileUtils;
+import application.model.Model;
 import application.preferences.Preferences;
 import com.google.gson.Gson;
 
@@ -30,7 +31,7 @@ public class BatchCommandTabController implements Initializable {
 
 	ObservableList<String> batchesListItems = FXCollections.observableArrayList();
 
-	ArrayList<CommandBatch> commandBatches = new ArrayList<>();
+	ArrayList<CommandBatch> commandBatches = Model.instance.getCommandBatches();
 
 	@FXML
 	private ListView<String> listBatches;
@@ -223,28 +224,12 @@ public class BatchCommandTabController implements Initializable {
 
 		Logger.d("Working Directory = " + System.getProperty("user.dir"));
 		batchesListItems.clear();
-		commandBatches.clear();
 		listCommands.clear();
-		for (File commandFile : Preferences.getInstance().getCommandFolder().listFiles()) {
-			Logger.d("Read: " + commandFile.getName());
-			String commands;
-			if (commandFile.getName().startsWith(".")) {
-				Logger.e("Will not try to read: " + commandFile);
-				continue;
-			}
 
-			try {
-				commands = FileUtils.readFile(commandFile.getAbsolutePath());
-				Gson gson = new Gson();
-				CommandBatch commandBatch = gson.fromJson(commands, CommandBatch.class);
-				commandBatch.name = commandFile.getName();
+		Model.instance.loadCommandBatches();
 
-				batchesListItems.add(commandFile.getName());
-				commandBatches.add(commandBatch);
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		for (CommandBatch commandBatch : commandBatches) {
+			batchesListItems.add(commandBatch.name);
 		}
 	}
 }

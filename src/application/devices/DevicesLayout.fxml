@@ -10,6 +10,7 @@
 
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.devices.DevicesController">
 	<!-- TODO Add Nodes -->
 
@@ -27,7 +28,8 @@
 		<TextField maxWidth="Infinity" promptText="Send text to device" onAction="#onDeviceInputEnter" fx:id="textFieldDeviceInput"/>
 		<Button text="Change Emulator date" maxWidth="Infinity" onAction="#onChangeEmulatorDate"/>
 		<Button text="Open developer settings on the device" wrapText="true" maxWidth="Infinity" onAction="#onOpenDevSettings"/>
-		<Button text="Open app directory" maxWidth="Infinity" onAction="#onOpenAppDirectory"/>
+		<ChoiceBox fx:id="choiceBoxBatchCommands" maxWidth="Infinity" value="Select command to run"/>
+
 	</VBox>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

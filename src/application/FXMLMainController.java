@@ -4,6 +4,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 import application.apks.APKsTabController;
@@ -136,5 +137,15 @@ public class FXMLMainController implements Initializable {
 	public void handleAlwaysOnTop(ActionEvent actionEvent) {
 		Stage stage = (Stage) tabPane.getScene().getWindow();
 		stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
+	}
+
+	public void onOpenAppDirectory(ActionEvent actionEvent) {
+		if (Desktop.isDesktopSupported()) {
+			try {
+				Desktop.getDesktop().open(Preferences.getInstance().getAppFolder());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

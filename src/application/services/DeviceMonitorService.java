@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import application.AdbUtils;
-import application.log.Logger;
 import application.model.Device;
 import application.model.Model;
 
@@ -68,7 +67,7 @@ public class DeviceMonitorService {
 					devices.add(device);
 				}
 
-				Model.instance.checkDevicesFaund(devices);
+				Model.instance.checkDevicesFound(devices);
 
 				try {
 					Thread.sleep(INTERVAL_DURATION);

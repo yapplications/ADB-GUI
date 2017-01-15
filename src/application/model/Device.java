@@ -1,5 +1,7 @@
 package application.model;
 
+import application.log.Logger;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -78,7 +80,7 @@ public class Device {
 		return applications;
 	}
 
-	public synchronized void checkApplicationFaund(List<Application> foundApplications) {
+	public synchronized void checkApplicationFound(List<Application> foundApplications) {
 		List<Application> availbleApplications = getApplications();
 		boolean changed = false;
 
@@ -125,5 +127,36 @@ public class Device {
 
 	private synchronized void notifyListeners() {
 		ModelListener.notify(modelListeners);
+	}
+
+	public boolean copy(Device copyDevice) {
+		boolean changed = false;
+
+		if (isChanged(name, copyDevice.name)){
+			Logger.d("Name changed: " + name + " " + copyDevice.name);
+			name = copyDevice.name;
+			changed = true;
+		}
+
+		if (isChanged(model, copyDevice.model)){
+			Logger.d("Model changed: " + model + " " + copyDevice.model);
+
+			model = copyDevice.model;
+			changed = true;
+		}
+
+		if (isChanged(androidVersion, copyDevice.androidVersion)){
+			Logger.d("androidVersion changed: " + androidVersion + " " + copyDevice.androidVersion);
+
+			androidVersion = copyDevice.androidVersion;
+			changed = true;
+		}
+
+		return changed;
+	}
+
+	private boolean isChanged(String param1, String param2) {
+		return ((param1 == null && param2 != null) ||
+				(param1 != null && ! param1.equals(param2)));
 	}
 }

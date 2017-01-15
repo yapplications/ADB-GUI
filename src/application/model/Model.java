@@ -1,5 +1,6 @@
 package application.model;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -7,8 +8,10 @@ import java.util.List;
 import java.util.Set;
 
 import application.AdbUtils;
+import application.FileUtils;
 import application.preferences.Preferences;
 import application.log.Logger;
+import com.google.gson.Gson;
 
 public class Model {
 	Device selectedDevice;
@@ -20,6 +23,8 @@ public class Model {
 	Set<ModelListener> modelListeners = new HashSet<>();
 
 	Set<ModelListener> selectedDeviceListeners = new HashSet<>();
+
+	ArrayList<CommandBatch> commandBatches = new ArrayList<>();
 
 	private Model() {
 
@@ -48,17 +53,22 @@ public class Model {
 		return devices;
 	}
 
-	public synchronized void checkDevicesFaund(List<Device> faundDevices) {
+	public synchronized void checkDevicesFound(List<Device> foundDevices) {
 		boolean changed = false;
-		for (Device deviceFaund : faundDevices) {
-			if (!availableDevices.contains(deviceFaund)) {
+		for (Device deviceFound : foundDevices) {
+			int index = availableDevices.indexOf(deviceFound);
+			addDeviceInfo(deviceFound);
+
+			if (index < 0) {
 				// not exists
-				Logger.d("Found new device: " + deviceFaund.getId());
+				Logger.d("Found new device: " + deviceFound.getId());
 
-				addDeviceInfo(deviceFaund);
 
-				availableDevices.add(deviceFaund);
+				availableDevices.add(deviceFound);
 				changed = true;
+			} else {
+				Device availableDevice = availableDevices.get(index);
+				changed = availableDevice.copy(deviceFound) || changed;
 			}
 		}
 
@@ -67,7 +77,7 @@ public class Model {
 			Device deviceExisting = i.next(); // must be called before you can
 												// call i.remove()
 
-			if (!faundDevices.contains(deviceExisting)) {
+			if (!foundDevices.contains(deviceExisting)) {
 				// not exists
 				Logger.d("Lost device: " + deviceExisting.getId());
 				i.remove();
@@ -119,5 +129,35 @@ public class Model {
 
 		notifyListeners();
 		ModelListener.notify(null);
+	}
+
+	public ArrayList<CommandBatch> getCommandBatches() {
+		return commandBatches;
+	}
+
+	public void loadCommandBatches() {
+		commandBatches.clear();
+
+		for (File commandFile : Preferences.getInstance().getCommandFolder().listFiles()) {
+			Logger.d("Read: " + commandFile.getName());
+			String commands;
+			if (commandFile.getName().startsWith(".")) {
+				Logger.e("Will not try to read: " + commandFile);
+				continue;
+			}
+
+			try {
+				commands = FileUtils.readFile(commandFile.getAbsolutePath());
+				Gson gson = new Gson();
+				CommandBatch commandBatch = gson.fromJson(commands, CommandBatch.class);
+				commandBatch.name = commandFile.getName();
+
+				commandBatches.add(commandBatch);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 	}
 }

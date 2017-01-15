@@ -93,7 +93,7 @@ public class ApplicationsMonitorService {
 							Logger.d(application.getApplicationName());
 						}
 					}*/
-					selectedDevice.checkApplicationFaund(applications);
+					selectedDevice.checkApplicationFound(applications);
 				}
 
 				try {

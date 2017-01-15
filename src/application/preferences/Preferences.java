@@ -185,4 +185,8 @@ public class Preferences {
 	public String getSnapshotFolder() {
 		return screenshotsFolder.getAbsolutePath();
 	}
+
+	public File getAppFolder() {
+		return appFolder;
+	}
 }

@@ -25,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import application.log.Logger;
 import application.log.Logger.LoggerListener;
@@ -37,6 +38,7 @@ public class FXMLMainController implements Initializable {
     protected static final int TAB_INDEX_APKS = 2;
     public Button buttonToggleEdit;
     public CheckBox checkBoxAlwaysOnTop;
+    public BorderPane borderPaneRoot;
 
     @FXML
     private TabPane tabPane;
@@ -66,6 +68,9 @@ public class FXMLMainController implements Initializable {
                 e.printStackTrace();
             }
         }
+
+        CssUtill.setBackgroud(tabPane);
+        CssUtill.setBackgroud(borderPaneRoot);
 
         tabPane.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 

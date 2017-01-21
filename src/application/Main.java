@@ -8,6 +8,8 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import application.services.DeviceMonitorService;
@@ -41,7 +43,11 @@ public class Main extends Application {
 		hostService = getHostServices();
 
 		Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
+
 		Scene scene = new Scene(root, 1200, 620);
+		CssUtill.apply(scene);
+
+
 		Image iconImage = new Image("/res/icon.png");
 		primaryStage.getIcons().add(iconImage);
 

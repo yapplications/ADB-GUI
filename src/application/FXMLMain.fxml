@@ -12,7 +12,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.shape.Line?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.76-ea"
-            fx:controller="application.FXMLMainController">
+            fx:controller="application.FXMLMainController" fx:id="borderPaneRoot">
     <!-- TODO Add Nodes -->
     <center>
         <TabPane fx:id="tabPane">

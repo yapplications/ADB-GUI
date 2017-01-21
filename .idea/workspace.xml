@@ -67,21 +67,103 @@
       <file leaf-file-name="FXMLMainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+            <state relative-caret-position="431">
+              <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
               <folding>
-                <element signature="e#3069#3070#0" expanded="true" />
-                <element signature="e#3126#3127#0" expanded="true" />
+                <element signature="e#3234#3235#0" expanded="true" />
+                <element signature="e#3291#3292#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartupCheckController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/application/startupcheck/StartupCheckController.java">
+      <file leaf-file-name="FXMLMain.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/FXMLMain.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paint.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/paint/Paint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="126" column="24" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CssUtill.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/CssUtill.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="1071" column="22" selection-start-line="1071" selection-start-column="22" selection-end-line="1071" selection-end-column="22" />
+              <folding>
+                <element signature="e#45769#45770#0" expanded="true" />
+                <element signature="e#45811#45812#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TabPane.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/TabPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="91" column="32" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Control.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/Control.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/res/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -90,79 +172,14 @@
       <file leaf-file-name="DevicesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/devices/DevicesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="191">
+              <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2540#2541#0" expanded="true" />
                 <element signature="e#2588#2589#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PreferenceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/preferences/PreferenceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceMonitorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/services/DeviceMonitorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/log/Logger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PreferenceLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/preferences/PreferenceLayout.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ADBHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/ADBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="193" column="9" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartupCheckLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/startupcheck/StartupCheckLayout.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
           </provider>
         </entry>
       </file>
@@ -183,9 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/application/FXMLPreferenceController.java" />
-        <option value="$PROJECT_DIR$/src/application/screencapture/BatchCommandEditLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/application/FXMLDevicesController.java" />
         <option value="$PROJECT_DIR$/src/application/applications/ApplicationsTabController.java" />
         <option value="$PROJECT_DIR$/src/application/Preferences.java" />
         <option value="$PROJECT_DIR$/src/application/logexceptions/ExceptionLog.java" />
@@ -219,21 +233,24 @@
         <option value="$PROJECT_DIR$/src/application/batchcommands/BatchCommandEditController.java" />
         <option value="$PROJECT_DIR$/src/application/batchcommands/BatchCommandTab.fxml" />
         <option value="$PROJECT_DIR$/src/application/intentbroadcasts/IntentsBroadcastsLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/application/devices/DevicesLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/batchcommands/BatchCommandTabController.java" />
-        <option value="$PROJECT_DIR$/src/application/FXMLMain.fxml" />
         <option value="$PROJECT_DIR$/src/application/model/Device.java" />
         <option value="$PROJECT_DIR$/src/application/model/Model.java" />
         <option value="$PROJECT_DIR$/src/application/preferences/Preferences.java" />
-        <option value="$PROJECT_DIR$/src/application/devices/DevicesController.java" />
-        <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/startupcheck/ScreenCaptureLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/application/FXMLMainController.java" />
         <option value="$PROJECT_DIR$/src/application/ADBHelper.java" />
         <option value="$PROJECT_DIR$/src/application/preferences/PreferenceController.java" />
         <option value="$PROJECT_DIR$/src/application/preferences/PreferenceLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/startupcheck/StartupCheckLayout.fxml" />
         <option value="$PROJECT_DIR$/src/application/startupcheck/StartupCheckController.java" />
+        <option value="$PROJECT_DIR$/src/application/application.css" />
+        <option value="$PROJECT_DIR$/src/application/devices/DevicesLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/application/devices/DevicesController.java" />
+        <option value="$PROJECT_DIR$/src/application/Main.java" />
+        <option value="$PROJECT_DIR$/src/application/CssUtill.java" />
+        <option value="$PROJECT_DIR$/src/application/FXMLMain.fxml" />
+        <option value="$PROJECT_DIR$/src/application/FXMLMainController.java" />
+        <option value="$PROJECT_DIR$/src/res/application.css" />
       </list>
     </option>
   </component>
@@ -280,10 +297,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -306,7 +319,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,104 +334,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startupcheck" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUITool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="screencapture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUITool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="preferences" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUITool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUITool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADBUITool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="batchcommands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -441,10 +364,10 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="adbuitool" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/evgeni.shafran/DEV/Personal/JavaFX/ADBUI/src/application/devices/DevicesController.java&#10;showScreen&#9;PSI&#9;JAVA://application.batchcommands.CommandWizardController#showScreen&#10;find&#9;ACTION&#9;RevealIn&#10;ant&#9;ACTION&#9;ActivateAntBuildToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="application.css&#9;FILE&#9;file:///Users/evgeni.shafran/DEV/Personal/JavaFX/ADBUI/src/application/application.css&#10;search &#9;ACTION&#9;SearchEverywhere&#10;showScreen&#9;PSI&#9;JAVA://application.batchcommands.CommandWizardController#showScreen&#10;find&#9;ACTION&#9;RevealIn&#10;ant&#9;ACTION&#9;ActivateAntBuildToolWindow" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="true" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
   </component>
@@ -649,7 +572,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -681,52 +604,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/text/SimpleDateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="385" column="26" selection-start-line="385" selection-start-column="22" selection-end-line="385" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar!/com/sun/activation/registries/LogSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/view/DateTimePickerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="125" column="31" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/intentbroadcasts/IntentBroadcast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/batchcommands/BatchCommandEditLayout.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/GifSequenceWriter.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/awt/Desktop.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -764,23 +641,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/applications/ApplicationsTab.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/apks/APKsTab.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/apks/APKsTabController.java">
@@ -791,23 +668,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/logexceptions/LogExceptionsLayout.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/logexceptions/LogExceptionsLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/terminal/TerminalController.java">
@@ -825,73 +702,37 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/batchcommands/BatchCommandTab.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/batchcommands/BatchCommandTabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="143" column="33" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1570#1571#0" expanded="false" />
-            <element signature="e#1601#1602#0" expanded="false" />
-            <element signature="e#3722#3723#0" expanded="false" />
-            <element signature="e#3753#3754#0" expanded="false" />
-            <element signature="e#5694#5695#0" expanded="false" />
-            <element signature="e#5736#5737#0" expanded="false" />
-            <element signature="e#5800#5801#0" expanded="false" />
-            <element signature="e#5820#5821#0" expanded="false" />
-            <element signature="e#6051#6052#0" expanded="false" />
-            <element signature="e#6073#6074#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/intentbroadcasts/IntentsBroadcastsLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/devices/DevicesLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/FXMLMain.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/intentbroadcasts/IntentBroadcastsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="59" column="114" selection-start-line="59" selection-start-column="114" selection-end-line="59" selection-end-column="114" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,20 +753,6 @@
             <element signature="e#2904#2905#0" expanded="false" />
             <element signature="e#2953#2954#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/ProcessUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -956,18 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/batchcommands/BatchCommandsListView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="55" column="79" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,38 +815,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/screencapture/ScreenCaptureLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/batchcommands/BatchCommandEditController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="195" column="35" selection-start-line="195" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/batchcommands/CommandWizardLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-225">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/AdbUtils.java">
@@ -1048,69 +864,59 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/preferences/PreferenceLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/startupcheck/StartupCheckLayout.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/startupcheck/StartupCheckLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/services/DeviceMonitorService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
+        <state relative-caret-position="570">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
           <folding>
-            <element signature="e#3069#3070#0" expanded="true" />
-            <element signature="e#3126#3127#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/preferences/PreferenceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
+        <state relative-caret-position="525">
           <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/ADBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
+        <state relative-caret-position="2745">
           <caret line="193" column="9" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/devices/DevicesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#922#923#0" expanded="false" />
+            <element signature="e#994#995#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1119,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-888">
           <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1127,6 +932,127 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/ProcessUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/application.css" />
+    <entry file="file://$PROJECT_DIR$/src/application/devices/DevicesLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/devices/DevicesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/paint/Paint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="126" column="24" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/TabPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="91" column="32" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="1071" column="22" selection-start-line="1071" selection-start-column="22" selection-end-line="1071" selection-end-column="22" />
+          <folding>
+            <element signature="e#45769#45770#0" expanded="true" />
+            <element signature="e#45811#45812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/CssUtill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/FXMLMainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding>
+            <element signature="e#3234#3235#0" expanded="true" />
+            <element signature="e#3291#3292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/FXMLMain.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>

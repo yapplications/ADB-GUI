@@ -183,10 +183,13 @@ public class ADBHelper {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddhhmmyyyy.ss");
 
         String dateString = simpleDateFormat.format(calendar.getTime());
-        result = AdbUtils.run("shell date " + dateString);
-        Logger.d(result);
 
-        if (!result.contains("bad date")){
+        result = AdbUtils.run("root");
+
+        result = AdbUtils.run("shell date " + dateString);
+        Logger.d("shell date " + dateString + " ---> " + result);
+
+        if (!result.contains("bad date") && !result.contains("not permitted")){
             result = null;
         }
 
@@ -210,5 +213,11 @@ public class ADBHelper {
         }
 
         return packages;
+    }
+
+    public static boolean isADBFound() {
+        String result = AdbUtils.run("version");
+
+        return result.startsWith("Android Debug Bridge");
     }
 }

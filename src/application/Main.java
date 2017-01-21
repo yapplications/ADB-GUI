@@ -14,8 +14,10 @@ import application.services.DeviceMonitorService;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.PrintStream;
+import java.net.URL;
 
 public class Main extends Application {
 
@@ -39,10 +41,20 @@ public class Main extends Application {
 		hostService = getHostServices();
 
 		Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
-		Scene scene = new Scene(root, 1200, 600);
-		primaryStage.getIcons().add(new Image("/res/icon.png"));
+		Scene scene = new Scene(root, 1200, 620);
+		Image iconImage = new Image("/res/icon.png");
+		primaryStage.getIcons().add(iconImage);
 
-		primaryStage.setTitle("ADB GUI");
+		try {
+			URL iconURL = Main.class.getResource("/res/icon.png");
+			java.awt.Image image = new ImageIcon(iconURL).getImage();
+			com.apple.eawt.Application.getApplication().setDockIconImage(image);
+		} catch (Exception e) {
+			// Won't work on Windows or Linux.
+		}
+
+
+		primaryStage.setTitle("ADB GUI Tool");
 		primaryStage.setScene(scene);
 		//primaryStage.setResizable(false);
 		primaryStage.show();

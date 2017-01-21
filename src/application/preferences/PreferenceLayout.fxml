@@ -20,9 +20,9 @@
     <VBox spacing="10">
 
         <Text text="Preferences" />
-        <Label text="Adb path:" />
+        <!--<Label text="Adb path:" />
         <TextField fx:id="textFieldAdbPath" prefWidth="700" text="devices" />
-
+-->
         <Label text="Additions APKs folder path (seperated by ;):" />
         <TextField fx:id="textFieldAPKsFolders" prefWidth="700" text="" />
 

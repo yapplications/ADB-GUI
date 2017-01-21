@@ -9,7 +9,10 @@ import java.util.ResourceBundle;
 
 import application.apks.APKsTabController;
 import application.applications.ApplicationsTabController;
+import application.model.ModelListener;
 import application.preferences.Preferences;
+import application.screencapture.ScreenCaptureController;
+import application.startupcheck.StartupCheckController;
 import com.sun.prism.PresentableState;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -106,6 +109,23 @@ public class FXMLMainController implements Initializable {
                 if (!Preferences.getInstance().
                         isEditWindowIsOpen()) {
                     handleToggleMainView(null);
+                }
+            }
+        });
+
+        openADBValidator();
+    }
+
+    private void openADBValidator() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+
+
+                try {
+                    StartupCheckController.showScreen(getClass());
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         });

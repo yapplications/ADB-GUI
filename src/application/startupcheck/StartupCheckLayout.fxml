@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<StackPane fx:id="pane" maxHeight="-Infinity"
+            maxWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.startupcheck.StartupCheckController">
+        <VBox alignment="CENTER" spacing="5">
+            <VBox fx:id="vboxLaoding" alignment="CENTER" spacing="5" visible="true">
+                <ProgressIndicator fx:id="progressIndicator" progress="-1.0" maxWidth="50"/>
+                <Label text="Initializing app, please wait..."/>
+            </VBox>
+            <VBox managed="false" fx:id="vboxEditAdbPath" alignment="CENTER" spacing="5" visible="false">
+                <Label text="We were unable to detect ADB path"/>
+                <Label text=  "This application need to know where the ADB located to work" />
+                <Label text="Please enter it and press check"/>
+                <TextField fx:id="textFieldADBPath" promptText="Enter adb path here"/>
+                <Button text="Check" prefWidth="Infinity" onAction="#onCheckClicked"/>
+                <Label fx:id="labelStatus"/>
+            </VBox>
+        </VBox>
+</StackPane>

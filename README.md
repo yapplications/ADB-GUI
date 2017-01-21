@@ -1,6 +1,8 @@
 # ADB-GUI - [GitHub Page](https://yapplications.github.io/ADB-GUI/)
 UI wrapper around ADB to make life easier for Android Developer and QA
 
+![alt tag](https://github.com/yapplications/ADB-GUI/blob/gh-pages/images/example-auto-login.gif)
+
 [Install](https://github.com/yapplications/ADB-GUI/blob/master/README.md#install) </br>
 [Use Cases](https://github.com/yapplications/ADB-GUI/blob/master/README.md#use-cases) </br>
 [Abilities](https://github.com/yapplications/ADB-GUI/blob/master/README.md#abilities) </br>
@@ -10,7 +12,7 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 
 * You should have Java and adb (comes with android studio) installed.
 
-1. Dowload: [ADB-GUI-Tool 0.1.5v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.5v/ADB-GUI-Tool.zip)
+1. Dowload: [ADB-GUI-Tool 0.1.6v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.6v/ADB-GUI-Tool-0.1.6.zip)
 
 2. Unzip to a path **without spaces**  
 

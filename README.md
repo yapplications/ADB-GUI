@@ -107,6 +107,9 @@ Some commands will appear green result even if the command failed
   
 ## Known Issues
 
+Was developed and tested on MAC, windows support is limited some features may not work.
+Was tested on variety of devices mainly on NEXUS  5x and emulators
+
 1. Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:
   * Press "Kill ADB"
   * Open terminal / command line and write "adb devices" (Running this command from the App not working for some reason)

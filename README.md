@@ -12,7 +12,7 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 
 * You should have Java and adb (comes with android studio) installed.
 
-1. Dowload: [ADB-GUI-Tool 0.1.6v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.6v/ADB-GUI-Tool-0.1.6.zip)
+1. Dowload: [ADB-GUI-Tool 0.1.7v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.7v/ADB-GUI-Tool-0.1.7.zip)
 
 2. Unzip to a path **without spaces**  
 
@@ -106,6 +106,9 @@ Some commands will appear green result even if the command failed
   * Edit app preference
   
 ## Known Issues
+
+Was developed and tested on MAC, windows support is limited some features may not work.
+Was tested on variety of devices mainly on NEXUS  5x and emulators
 
 1. Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:
   * Press "Kill ADB"

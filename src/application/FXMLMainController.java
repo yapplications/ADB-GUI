@@ -52,6 +52,7 @@ public class FXMLMainController implements Initializable {
 
     @FXML
     private Label labelRunningLog;
+    private Stage stage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -153,36 +154,43 @@ public class FXMLMainController implements Initializable {
 
     public void handleToggleMainView(ActionEvent actionEvent) {
 
-        Logger.d("tabPane  " + tabPane);
-        Logger.d("tabPane.getScene()  " + tabPane.getScene());
+        if (stage != null && tabPane != null) {
 
-        Stage stage = (Stage) tabPane.getScene().getWindow();
-        if (tabPane.isVisible()) {
-            tabPane.setVisible(false);
-            stage.setWidth(210);
-            stage.setResizable(false);
-            buttonToggleEdit.setText("Open edit window");
+            Logger.d("tabPane  " + tabPane);
 
+            if (tabPane.isVisible()) {
+                tabPane.setVisible(false);
+                stage.setWidth(210);
+                stage.setResizable(false);
+                buttonToggleEdit.setText("Open edit window");
+
+            } else {
+                tabPane.setVisible(true);
+                stage.setResizable(true);
+                stage.setWidth(1200);
+
+                buttonToggleEdit.setText("Close edit window");
+            }
+
+            if (actionEvent != null) {
+                Preferences.getInstance().setEditWindowIsOpen(tabPane.isVisible());
+            }
         } else {
-            tabPane.setVisible(true);
-            stage.setResizable(true);
-            stage.setWidth(1200);
-
-            buttonToggleEdit.setText("Close edit window");
-        }
-
-        if (actionEvent != null) {
-            Preferences.getInstance().setEditWindowIsOpen(tabPane.isVisible());
+            Logger.e("handleToggleMainView WTF: " + stage + " " + tabPane);
         }
     }
 
     public void handleAlwaysOnTop(ActionEvent actionEvent) {
-        Stage stage = (Stage) tabPane.getScene().getWindow();
-        stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
+        if (stage != null && checkBoxAlwaysOnTop != null) {
+            stage.setAlwaysOnTop(checkBoxAlwaysOnTop.isSelected());
 
-        if (actionEvent != null) {
-            Preferences.getInstance().setWindowIsAlwaysOn(checkBoxAlwaysOnTop.isSelected());
+            if (actionEvent != null) {
+                Preferences.getInstance().setWindowIsAlwaysOn(checkBoxAlwaysOnTop.isSelected());
+            }
+        } else {
+            Logger.e("handleAlwaysOnTop WTF: " + stage + " " + checkBoxAlwaysOnTop);
         }
+
     }
 
     public void onOpenAppDirectory(ActionEvent actionEvent) {
@@ -193,5 +201,9 @@ public class FXMLMainController implements Initializable {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void setStageAndSetupListeners(Stage stage) {
+        this.stage = stage;
     }
 }

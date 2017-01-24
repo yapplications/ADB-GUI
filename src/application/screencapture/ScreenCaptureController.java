@@ -100,10 +100,14 @@ public class ScreenCaptureController implements Initializable {
 
 	@FXML
 	public void onSaveClicked(ActionEvent actionEvent) {
+		String fileName = Model.instance.getSelectedDevice().getName() + " " +
+				Model.instance.getSelectedDevice().getAndroidVersion() + " " +
+				DateUtil.getCurrentTimeStamp() + ".png";
+
+		fileName = fileName.replace(" ", "");
+
 		File snapshotFile = new File(snapshotsFolder,
-				Model.instance.getSelectedDevice().getName() + " " +
-						Model.instance.getSelectedDevice().getAndroidVersion() + " " +
-						DateUtil.getCurrentTimeStamp() + ".png");
+				fileName);
 
 		Path source = Paths.get(getTempSnapshotSaved().getAbsolutePath());
 		Path destination = Paths.get(snapshotFile.getAbsolutePath());

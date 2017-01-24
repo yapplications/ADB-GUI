@@ -40,15 +40,18 @@ public class Main extends Application {
 
 		hostService = getHostServices();
 
-		Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMain.fxml"));
+
+		Parent root = loader.load();
 		Scene scene = new Scene(root, 1200, 620);
+
 		Image iconImage = new Image("/res/icon.png");
 		primaryStage.getIcons().add(iconImage);
 
 		try {
-			URL iconURL = Main.class.getResource("/res/icon.png");
+		/*	URL iconURL = Main.class.getResource("/res/icon.png");
 			java.awt.Image image = new ImageIcon(iconURL).getImage();
-			com.apple.eawt.Application.getApplication().setDockIconImage(image);
+			com.apple.eawt.Application.getApplication().setDockIconImage(image);*/
 		} catch (Exception e) {
 			// Won't work on Windows or Linux.
 		}
@@ -56,6 +59,10 @@ public class Main extends Application {
 
 		primaryStage.setTitle("ADB GUI Tool");
 		primaryStage.setScene(scene);
+
+		FXMLMainController controller = (FXMLMainController)loader.getController();
+		controller.setStageAndSetupListeners(primaryStage); // or what you want to do
+
 		//primaryStage.setResizable(false);
 		primaryStage.show();
 

@@ -63,9 +63,13 @@ public class StartupCheckController implements Initializable {
                 } catch (InterruptedException e) {}
                 boolean adbExists = ADBHelper.isADBFound();
 
+                Logger.d("Is adb found: " + adbExists);
+
                 if (!adbExists){
                     if (tryToFindADB()){
                         adbExists = ADBHelper.isADBFound();
+
+                        Logger.d("Is adb found after auto search: " + adbExists);
                     }
                 }
 
@@ -153,6 +157,8 @@ public class StartupCheckController implements Initializable {
             @Override
             public void run() {
                 final boolean adbExists = ADBHelper.isADBFound();
+                Logger.d("Is adb found after user input: " + adbExists);
+
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {

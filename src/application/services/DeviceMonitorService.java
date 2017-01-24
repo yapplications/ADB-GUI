@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import application.AdbUtils;
+import application.log.Logger;
 import application.model.Device;
 import application.model.Model;
 
@@ -47,7 +48,7 @@ public class DeviceMonitorService {
 
 				String result = AdbUtils.run("devices -l");
 				String[] split = result.split("\n");
-				//Logger.d("devices: " + result);
+				Logger.d("devices: " + result);
 
 				List<Device> devices = new ArrayList<>();
 
@@ -73,6 +74,8 @@ public class DeviceMonitorService {
 					Thread.sleep(INTERVAL_DURATION);
 				} catch (InterruptedException e) {}
 			}
+
+			Logger.d("Someone stopped me!!!");
 		}
 	};
 }

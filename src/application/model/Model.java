@@ -102,7 +102,7 @@ public class Model {
 			deviceFaund.setName(deviceFaund.getModel());
 		}
 		String[] split =
-				AdbUtils.executeCommand(Preferences.getInstance().getAdbInstallLocatoin() + "/adb -s " + id + " shell getprop ro.build.version.release").split("\n");
+				AdbUtils.run("shell getprop ro.build.version.release").split("\n");
 
 		if (split.length > 0){
 			deviceFaund.setAndroidVersion(split[0]);

@@ -1,6 +1,8 @@
 # ADB-GUI - [GitHub Page](https://yapplications.github.io/ADB-GUI/)
 UI wrapper around ADB to make life easier for Android Developer and QA
 
+[Medium post about ADB-GUI-Tool (27.01.2017)](https://medium.com/@evgenishafran/keep-your-sanity-while-doing-android-development-1d9964929199#.k7s9ztavo)
+
 ![alt tag](https://github.com/yapplications/ADB-GUI/blob/gh-pages/images/example-auto-login.gif)
 
 [Install](https://github.com/yapplications/ADB-GUI/blob/master/README.md#install) </br>

@@ -6,7 +6,7 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 ![alt tag](https://github.com/yapplications/ADB-GUI/blob/gh-pages/images/example-auto-login.gif)
 
 [Install](https://github.com/yapplications/ADB-GUI/blob/master/README.md#install) </br>
-[Submit an issue](https://github.com/yapplications/ADB-GUI/blob/master/README.md#Submit-an-issue) </br>
+[Submit an issue](https://github.com/yapplications/ADB-GUI/blob/master/README.md#submit-an-issue) </br>
 [Use Cases](https://github.com/yapplications/ADB-GUI/blob/master/README.md#use-cases) </br>
 [Abilities](https://github.com/yapplications/ADB-GUI/blob/master/README.md#abilities) </br>
 [Share 'command batch' / 'intent' with your team](https://github.com/yapplications/ADB-GUI/blob/master/README.md#share-command-batch--intent-with-your-team) </br>

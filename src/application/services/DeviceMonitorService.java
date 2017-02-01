@@ -48,7 +48,7 @@ public class DeviceMonitorService {
 
 				String result = AdbUtils.run("devices -l");
 				String[] split = result.split("\n");
-				Logger.d("devices: " + result);
+				//Logger.d("devices: " + result);
 
 				List<Device> devices = new ArrayList<>();
 

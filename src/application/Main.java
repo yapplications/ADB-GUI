@@ -88,7 +88,11 @@ public class Main extends Application {
 
 		} else {
 			File baseDirectory = new File("/Users/");
-			for (File file : baseDirectory.listFiles()) {
+
+			File[] userFolder = baseDirectory.listFiles();
+
+			if (userFolder != null)
+			for (File file : userFolder) {
 				File pathCheck = new File(file, "Library/Android/sdk/platform-tools/");
 				if (pathCheck.exists()){
 					Logger.d("Found adb location: " + pathCheck.getAbsolutePath());

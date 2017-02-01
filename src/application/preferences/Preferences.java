@@ -85,7 +85,21 @@ public class Preferences {
 	}
 
 	public String getAdbInstallLocatoin() {
-		return preferenceObj.adbPath;
+		String installedLocation = preferenceObj.adbPath;
+
+		if (installedLocation != null) {
+
+			// we will adjust the adb command ourselves
+			if (installedLocation.endsWith(File.separator + "adb")) {
+				installedLocation = installedLocation.substring(0, installedLocation.lastIndexOf(File.separator));
+			}
+
+			if (installedLocation.trim().length() > 0 && !installedLocation.endsWith(File.separator)){
+				installedLocation += File.separator;
+			}
+		}
+
+		return installedLocation;
 	}
 
 	public File getLogFile() {

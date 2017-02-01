@@ -27,9 +27,9 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 5. On first run: change 'adb path' in preference screen to point to your local adb
 
 ## Submit an issue
-If you encountered a problem, something is not working, please open an issue.
-But before you do so please go to the app path, open 'preference' file,
-Change: "debug":false -> "debug":true
+If you encountered a problem, something is not working, please open an issue.</br>
+But before you do so please go to the app path, open 'preference' file,</br>
+Change: "debug":false -> "debug":true</br>
 Try to recreate your error and send me the last logs (both the error and regular one) created at: 'app-logs' directory under you app directory.
 
 ## Use Cases:
@@ -116,8 +116,8 @@ Some commands will appear green result even if the command failed
   * Edit app preference
   
 ## Share 'command batch' / 'intent' with your team
-You can easily send you team an 'command batch' or 'intent' they both saved in a JSON file.
-Just find the right file under your app directory and send it to your team mate.
+You can easily send you team an 'command batch' or 'intent' they both saved in a JSON file.</br>
+Just find the right file under your app directory and send it to your team mate.</br>
 Ask him to put it into the right directory and that it, he got it!
   
 ## Known Issues

@@ -14,7 +14,7 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 
 * You should have Java and adb (comes with android studio) installed.
 
-1. Dowload: [ADB-GUI-Tool 0.1.8v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.8v/ADB-GUI-Tool-0.1.8.zip)
+1. Dowload: [ADB-GUI-Tool 0.1.9v](https://github.com/yapplications/ADB-GUI/releases/download/0.1.9v/ADB-GUI-Tool-0.1.9.zip)
 
 2. Unzip to a path **without spaces**  
 
@@ -23,6 +23,12 @@ UI wrapper around ADB to make life easier for Android Developer and QA
 4. Run: ADB-GUI-Tool.jar (Double press from finder / explorer or run: `java -jar ADB-GUI-Tool.jar` from terminal)
 
 5. On first run: change 'adb path' in preference screen to point to your local adb
+
+## Submit an issue
+If you encountered a problem, something is not working, please open an issue.
+But before you do so please go to the app path, open 'preference' file,
+Change: "debug":false -> "debug":true
+Try to recreate your error and send me the last logs (both the error and regular one) created at: 'app-logs' directory under you app directory.
 
 ## Use Cases:
 
@@ -107,9 +113,14 @@ Some commands will appear green result even if the command failed
 7. Preference
   * Edit app preference
   
+## Share 'command batch' / 'intent' with your team
+You can easily send you team an 'command batch' or 'intent' they both saved in a JSON file.
+Just find the right file under your app directory and send it to your team mate.
+Ask him to put it into the right directory and that it, he got it!
+  
 ## Known Issues
 
-Was developed and tested on MAC, windows support is limited some features may not work.
+Was developed and tested on MAC, windows and linux support is limited some features may not work (It should but was partialy tested).
 Was tested on variety of devices mainly on NEXUS  5x and emulators
 
 1. Unothorized device: some times the adb devices command will retrive one of the devices as unothorized in this case you should:

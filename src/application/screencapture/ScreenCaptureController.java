@@ -21,6 +21,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -169,11 +170,15 @@ public class ScreenCaptureController implements Initializable {
 
 	public void onOpenFolderClicked(ActionEvent actionEvent) {
 		if (Desktop.isDesktopSupported()) {
-			try {
-				Desktop.getDesktop().open(new File(Preferences.getInstance().getSnapshotFolder()));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			SwingUtilities.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Desktop.getDesktop().open(new File(Preferences.getInstance().getSnapshotFolder()));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		}
 	}
 

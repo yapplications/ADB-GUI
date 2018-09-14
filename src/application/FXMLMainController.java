@@ -30,6 +30,8 @@ import application.log.Logger;
 import application.log.Logger.LoggerListener;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 public class FXMLMainController implements Initializable {
 
     public static final int TAB_INDEX_APPLICATIONS = 1;
@@ -195,11 +197,15 @@ public class FXMLMainController implements Initializable {
 
     public void onOpenAppDirectory(ActionEvent actionEvent) {
         if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().open(Preferences.getInstance().getAppFolder());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    try {
+                        Desktop.getDesktop().open(Preferences.getInstance().getAppFolder());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
     }
 
